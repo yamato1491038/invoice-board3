@@ -1,2 +1,8 @@
+
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 @import "reset";
-@import "modules/user"
+@import "modules/user";
+@import "modules/regular";

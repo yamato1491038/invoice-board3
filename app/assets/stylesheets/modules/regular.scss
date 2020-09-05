@@ -1,0 +1,34 @@
+.wrapper{
+  height: 98vh;
+}
+
+.Title{
+  text-align: center;
+  font-size: 60px;
+}
+
+.Menu{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__regular *{
+    font-size: 20px;
+  }
+
+  &__regular {
+
+    margin-top: 100px;
+
+    &__btn-regular{
+      height: 50px;
+      width: 120px;
+    }
+  }
+}
+
+.btn-font-size{
+  font-size: 20px;
+  display: inline;
+}
