@@ -1,0 +1,22 @@
+.wrapper
+  .Title
+    調査費登録
+  .Regular
+    .Regular__table
+      = form_with model: @regular, local: true do |f|
+        %table{border: "1"}
+          %tr
+            %th.table_style
+              日付
+            %th.table_style
+              HNO
+            %th.table_style.text-aline
+              定期巡回費
+          %tr
+            %td.table_style
+              = f.date_field :dating, use_month_numbers:true,prompt:"--", class: ''
+            %td.table_style
+              = f.number_field :hno, min: 0,class:""
+            %td.table_style
+              = f.collection_check_boxes :contract_ids, Contract.where(kind: "1"), :id, :name
+        = f.submit '登録', class: 'Regular__table__btn btn btn-success'

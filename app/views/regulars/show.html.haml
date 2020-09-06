@@ -1,0 +1,9 @@
+.wrapper
+  .Title
+    調査費確認
+  .Regular__form
+    = form_with url: search_regulars_path, local: true, method: :get, class: "" do |f|
+
+      = f.date_select :dating, {discard_day:true,use_month_numbers:true}, class: ''
+
+      = f.submit "検索", class: "Button--login"

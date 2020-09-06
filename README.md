@@ -1,24 +1,11 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ... 
+#ドロップダウン
+.dropdown
+      %button.btn.btn-secondary.btn-danger.dropdown-toggle.Menu__regular__btn-regular#dropdownMenuButton{type: "button",data: {toggle: "dropdown"},aria: {haspopup: "true",expanded: "false"}}
+        .btn-font-size
+          調査費
+      .dropdown-menu{aria: {labelledby: "dropdownMenuButton"}}
+        %a{class: "dropdown-item", href: '/regulars/new'}
+          登録
+        %a{class: "dropdown-item", href: "/regulars/#{current_user.id}"}
+          確認
