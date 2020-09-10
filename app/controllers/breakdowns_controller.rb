@@ -1,4 +1,5 @@
 class BreakdownsController < ApplicationController
+  before_action :user_admin, only: [:show, :check]
 
   def index
   end
@@ -41,6 +42,12 @@ class BreakdownsController < ApplicationController
 
   def search_params
     params.merge(user_id: current_user.id)
+  end
+
+  def user_admin
+    unless current_user.admin?
+      redirect_to root_path, alert: "管理の権限がありません"
+    end
   end
 
 end

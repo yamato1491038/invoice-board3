@@ -37,9 +37,10 @@
     .Menu__down
       .Menu__down__breakdown
         = link_to '内訳書', "/breakdowns", class:"btn btn-outline-danger"
-      .Menu__down__admin
-        = link_to '管理画面', "/contracts", class:"btn btn-secondary"
-          
+      
+      .Menu__down__logout
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn btn-primary'
 
-  .Main__logout
-    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button--logout'
+    .Menu__admin
+      .Menu__admin__button
+      = link_to '管理画面', "/contracts", class:"btn btn-secondary"

@@ -2,10 +2,11 @@
   .Title
     説得費確認
   .Regular__form
-    = form_with url: search_persuations_path, local: true, method: :get, class: "" do |f|
+    .Regular__form__content
+      = form_with url: search_persuations_path, local: true, method: :get, class: "" do |f|
 
-      = f.date_select :dating, {discard_day:true,use_month_numbers:true}, class: ''
+        = f.date_select :dating, {discard_day:true,use_month_numbers:true}, class: 'table_style'
 
-      = f.submit "検索", class: "Button--login"
+        = f.submit "検索", class: "btn btn-info"
   .Regular__return
-    = link_to "戻る","/regulars",class: 'btn btn-secondary'
+    = link_to "戻る","/regulars",class: 'btn-sized btn btn-secondary'

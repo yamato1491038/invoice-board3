@@ -2,33 +2,34 @@
   .Title
     交通費検索結果
   .Regular__show
-    %table{border: "1"}
-      %tr
-        %th.table_style
-          日付
-        %th.table_style
-          HNO
-        %th.table_style
-          通行費･駐車料
-        %th.table_style
-          通信費･消耗品費
-        %th.table_style
-          内訳詳細
-        %th.table_style
-          削除ボタン
-      - @costs.each do |cost|
+    .Regular__show__table
+      %table{border: "1"}
         %tr
-          %td.table_style
-            = cost.dating
-          %td.table_style
-            = cost.hno
-          %td.table_style
-            = cost.parking
-          %td.table_style
-            = cost.fee
-          %td.table_style
-            = cost.content
-          %td.table_style
-            = link_to '削除', "/costs/#{cost.id}", method: :delete, class:"btn btn-danger"
+          %th.table_style
+            日付
+          %th.table_style
+            HNO
+          %th.table_style
+            通行費･駐車料
+          %th.table_style
+            通信費･消耗品費
+          %th.table_style
+            内訳詳細
+          %th.table_style
+            削除ボタン
+        - @costs.each do |cost|
+          %tr
+            %td.table_style
+              = cost.dating
+            %td.table_style
+              = cost.hno
+            %td.table_style
+              = cost.parking
+            %td.table_style
+              = cost.fee
+            %td.table_style
+              = cost.content
+            %td.table_style
+              = link_to '削除', "/costs/#{cost.id}", method: :delete, class:"btn btn-danger"
   .Regular__return
-    = link_to "戻る","/regulars",class: 'btn btn-secondary'
+    = link_to "戻る","/regulars",class: 'btn-sized btn btn-secondary'

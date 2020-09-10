@@ -2,14 +2,15 @@
   .Title
     内訳書表示
   .Regular__form
-    = form_with url: check_breakdowns_path, local: true, method: :get, class: "" do |f|
+    .Regular__form__content
+      = form_with url: check_breakdowns_path, local: true, method: :get, class: "" do |f|
 
-      = f.label "コミュニケーター"
-      = f.collection_select(:user_id, User.all, :id, :name, {prompt: true}, {class:""})
+        = f.label "コミュニケーター"
+        = f.collection_select(:user_id, User.all, :id, :name, {prompt: true}, {class:"table_style"})
 
-      = f.label "年月"
-      = f.date_select :dating, {discard_day:true,use_month_numbers:true}, class: ''
+        = f.label "年月"
+        = f.date_select :dating, {discard_day:true,use_month_numbers:true}, class: 'table_style'
 
-      = f.submit "検索", class: ""
+        = f.submit "検索", class: "btn btn-info"
   .Regular__return
-    = link_to "戻る","/regulars",class: 'btn btn-secondary'
+    = link_to "戻る","/regulars",class: 'btn-sized btn btn-secondary'

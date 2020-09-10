@@ -2,31 +2,32 @@
   .Title
     検索結果
   .Regular__show
-    %table{border: "1"}
-      %tr
-        %th.table_style
-          日付
-        %th.table_style
-          HNO
-        - @contracts.each do |contract|
-          %th.table_style
-            = contract.name
-        %th.table_style
-          削除ボタン
-      - @regulars.each do |regular|
+    .Regular__show__table
+      %table{border: "1"}
         %tr
-          %td.table_style
-            = regular.dating
-          %td.table_style
-            = regular.hno
-          - @contracts.each do |work|
-            - if regular.contracts.include?(work)
-              %th.table_style
-                = 1
-            - else
-              %th.table_style
-                = 0
-          %td.table_style
-            = link_to '削除', "/regulars/#{regular.id}", method: :delete, class:"btn btn-danger"
+          %th.table_style
+            日付
+          %th.table_style
+            HNO
+          - @contracts.each do |contract|
+            %th.table_style
+              = contract.name
+          %th.table_style
+            削除ボタン
+        - @regulars.each do |regular|
+          %tr
+            %td.table_style
+              = regular.dating
+            %td.table_style
+              = regular.hno
+            - @contracts.each do |work|
+              - if regular.contracts.include?(work)
+                %th.table_style
+                  = 1
+              - else
+                %th.table_style
+                  = 0
+            %td.table_style
+              = link_to '削除', "/regulars/#{regular.id}", method: :delete, class:"btn btn-danger"
   .Regular__return
-    = link_to "戻る","/regulars",class: 'btn btn-secondary'
+    = link_to "戻る","/regulars",class: 'btn-sized btn btn-secondary'

@@ -4,25 +4,29 @@
   .Regular
     .Regular__table
       = form_with model: @contract, local: true do |f|
-        %table{border: "1"}
-          %tr
-            %th.table_style
-              契約名
-            %th.table_style
-              単価（円）
-            %th.table_style
-              種類(1.定期 2.説得)
-            %th.table_style
-              表示
-          %tr
-            %td.table_style
-              = f.text_field :name, class:""
-            %td.table_style
-              = f.number_field :money, min: 0,class:""
-            %td.table_style
-              = f.number_field :kind, min: 1, max: 2, class:""
-            %td.table_style
-              = f.select :active, [['非表示',0],['表示',1]], { include_blank: true, selected: 0 } ,class:""
-        = f.submit '登録', class: 'Regular__table__btn btn btn-success'
-  .Regular__return
-    = link_to "管理画面へ戻る","/contracts",class: 'btn btn-secondary'
+        .Regular__table__content
+          .Regular__table__content__tb
+            %table{border: "1"}
+              %tr
+                %th.table_style
+                  契約名
+                %th.table_style
+                  単価（円）
+                %th.table_style
+                  種類(1.定期 2.説得)
+                %th.table_style
+                  登録画面表示
+              %tr
+                %td.table_style
+                  = f.text_field :name, class:""
+                %td.table_style
+                  = f.number_field :money, min: 0,class:""
+                %td.table_style
+                  = f.number_field :kind, min: 1, max: 2, class:""
+                %td.table_style
+                  = f.select :active, [['非表示',0],['表示',1]], { include_blank: true, selected: 0 } ,class:""
+        .Regular__table__btn
+          .Regular__table__btn__content
+            = f.submit '登録', class: 'btn-sized btn btn-success'
+    .Regular__return
+      = link_to "管理画面へ戻る","/contracts",class: 'btn-sized btn btn-secondary'

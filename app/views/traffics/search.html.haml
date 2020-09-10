@@ -2,37 +2,38 @@
   .Title
     交通費検索結果
   .Regular__show
-    %table{border: "1"}
-      %tr
-        %th.table_style
-          日付
-        %th.table_style
-          HNO
-        %th.table_style
-          方面、区間
-        %th.table_style
-          走行距離(km)
-        %th.table_style
-          交通料金(円)
-        %th.table_style
-          詳細
-        %th.table_style
-          削除ボタン
-      - @traffics.each do |traffic|
+    .Regular__show__table
+      %table{border: "1"}
         %tr
-          %td.table_style
-            = traffic.dating
-          %td.table_style
-            = traffic.hno
-          %td.table_style
-            = traffic.field
-          %td.table_style
-            = traffic.distance
-          %td.table_style
-            = traffic.fee
-          %td.table_style
-            = traffic.content
-          %td.table_style
-            = link_to '削除', "/traffics/#{traffic.id}", method: :delete, class:"btn btn-danger"
+          %th.table_style
+            日付
+          %th.table_style
+            HNO
+          %th.table_style
+            方面、区間
+          %th.table_style
+            走行距離(km)
+          %th.table_style
+            交通料金(円)
+          %th.table_style
+            詳細
+          %th.table_style
+            削除ボタン
+        - @traffics.each do |traffic|
+          %tr
+            %td.table_style
+              = traffic.dating
+            %td.table_style
+              = traffic.hno
+            %td.table_style
+              = traffic.field
+            %td.table_style
+              = traffic.distance
+            %td.table_style
+              = traffic.fee
+            %td.table_style
+              = traffic.content
+            %td.table_style
+              = link_to '削除', "/traffics/#{traffic.id}", method: :delete, class:"btn btn-danger"
   .Regular__return
-    = link_to "戻る","/regulars",class: 'btn btn-secondary'
+    = link_to "戻る","/regulars",class: 'btn-sized btn btn-secondary'
