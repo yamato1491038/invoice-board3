@@ -1,0 +1,46 @@
+class BreakdownsController < ApplicationController
+
+  def index
+  end
+
+  def show
+  end
+
+  def search
+    search_action(search_params)
+  end
+
+  def check
+    search_action(params)
+  end
+
+  private
+
+  def search_action(params)
+    @regulars = Regular.search(params)
+    @persuations = Persuation.search(params)
+    traffics = Traffic.search(params)
+    costs = Cost.search(params)
+    @contracts1 = Contract.where(kind: "1")
+    @contracts2 = Contract.where(kind: "2")
+
+    @amount_distance = 0
+    @amount_fee = 0
+    traffics.each do |traffic|
+      @amount_distance += traffic.distance * 30 if traffic.distance?
+      @amount_fee += traffic.fee if traffic.fee?
+    end
+
+    @amount_parking = 0
+    @amount_fee2 = 0
+    costs.each do |cost|
+      @amount_parking += cost.parking if cost.parking?
+      @amount_fee2 += cost.fee if cost.fee?
+    end
+  end
+
+  def search_params
+    params.merge(user_id: current_user.id)
+  end
+
+end

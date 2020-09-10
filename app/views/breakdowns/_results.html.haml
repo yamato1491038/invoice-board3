@@ -1,0 +1,158 @@
+.Breakdown
+  .Breakdown__show
+    1.調査費
+    %table{border: "1"}
+      %tr
+        %th.table_style
+          
+        - @contracts1.each do |contract|
+          %th.table_style
+            = contract.name
+      %tr
+        %th.table_style
+          単価
+        - @contracts1.each do |contract|
+          %th.table_style
+            = contract.money
+      %tr
+        %th.table_style
+          件数
+        - @contracts1.each do |contract|
+          %th.table_style
+            - count = 0
+            - @regulars.each do |regular|
+              - if regular.contracts.include?(contract)
+                - count += 1
+            = count
+      %tr
+        %th.table_style
+          単価×件数
+        - bill = 0
+        - @contracts1.each do |contract|
+          %th.table_style
+            - count = 0
+            - @regulars.each do |regular|
+              - if regular.contracts.include?(contract)
+                - count += 1
+            - bill += count * contract.money
+            = count * contract.money
+  .Breakdown__amount
+    %table{border: "2"}
+      %tr
+        %th.table_style
+          調査費の小計
+        %th.table_style
+          = bill
+      %tr
+        %th.table_style
+          調査費の消費税
+        %th.table_style
+          - tax = (bill * 0.1).floor
+          = tax
+      %tr
+        %th.table_style
+          調査費の合計
+        %th.table_style
+          - total1 = bill + tax
+          = total1
+
+.Breakdown
+  .Breakdown__show
+    2.説得費
+    %table{border: "1"}
+      %tr
+        %th.table_style
+          
+        - @contracts2.each do |contract|
+          %th.table_style
+            = contract.name
+      %tr
+        %th.table_style
+          単価
+        - @contracts2.each do |contract|
+          %th.table_style
+            = contract.money
+      %tr
+        %th.table_style
+          件数
+        - @contracts2.each do |contract|
+          %th.table_style
+            - count = 0
+            - @persuations.each do |persuation|
+              - if persuation.contracts.include?(contract)
+                - count += 1
+            = count
+      %tr
+        %th.table_style
+          単価×件数
+        - bill = 0
+        - @contracts2.each do |contract|
+          %th.table_style
+            - count = 0
+            - @persuations.each do |persuation|
+              - if persuation.contracts.include?(contract)
+                - count += 1
+            - bill += count * contract.money
+            = count * contract.money
+
+  .Breakdown__amount
+    %table{border: "2"}
+      %tr
+        %th.table_style
+          説得費の小計
+        %th.table_style
+          = bill
+      %tr
+        %th.table_style
+          説得費の消費税
+        %th.table_style
+          - tax = (bill * 0.1).floor
+          = tax
+      %tr
+        %th.table_style
+          説得費の合計
+        %th.table_style
+          - total2 = bill + tax
+          = total2
+
+.Breakdownbottom
+  .Breakdownbottom__traffic
+    3.諸経費
+    %table{border: "1"}
+      %tr
+        %th.table_style
+
+        %th.table_style
+          距離金額(km×30)
+        %th.table_style
+          運賃等
+        %th.table_style
+          通行費･駐車料
+        %th.table_style
+          消耗品
+        %th.table_style
+          合計
+      %tr
+        %th.table_style
+          交通費･諸経費
+        %th.table_style
+          = @amount_distance
+        %th.table_style
+          = @amount_fee
+        %th.table_style
+          = @amount_parking
+        %th.table_style
+          = @amount_fee2
+        %th.table_style
+          - total3 = @amount_distance + @amount_fee +@amount_parking + @amount_fee
+          = total3
+
+  .Breakdownbottom__amount
+    %table{border: "2"}
+      %tr
+        %th.table_style
+          総合計
+        %th.table_style
+          = total1 + total2 + total3
+
+

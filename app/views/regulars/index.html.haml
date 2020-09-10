@@ -3,7 +3,7 @@
     業務登録
   .Menu
     .Menu__list
-      .Menu__list__regular.list-group
+      .Menu__list__icon.list-group
         %a{href:"#", class:"list-group-item btn-danger list-group-item-action active" }
           調査費
         %a{href:"regulars/new", class:"list-group-item list-group-item-action"}
@@ -11,7 +11,7 @@
         %a{href:"/regulars/#{current_user.id}", class:"list-group-item list-group-item-action"}
           確認
 
-      .Menu__list__persuation.list-group
+      .Menu__list__icon.list-group
         %a{href:"#", class:"list-group-item btn-warning list-group-item-action active" }
           説得費
         %a{href:"/persuations/new", class:"list-group-item list-group-item-action"}
@@ -19,21 +19,27 @@
         %a{href:"/persuations/#{current_user.id}", class:"list-group-item list-group-item-action"}
           確認
 
-      .Menu__list__traffic.list-group
+      .Menu__list__icon.list-group
         %a{href:"#", class:"list-group-item btn-success list-group-item-action active" }
           交通費
-        %a{href:"regulars/new", class:"list-group-item list-group-item-action"}
+        %a{href:"traffics/new", class:"list-group-item list-group-item-action"}
           登録
-        %a{href:"/regulars/#{current_user.id}", class:"list-group-item list-group-item-action"}
+        %a{href:"/traffics/#{current_user.id}", class:"list-group-item list-group-item-action"}
           確認
 
-      .Menu__list__cost.list-group
+      .Menu__list__icon.list-group
         %a{href:"#", class:"list-group-item btn-info list-group-item-action active" }
           諸経費
-        %a{href:"regulars/new", class:"list-group-item list-group-item-action"}
+        %a{href:"costs/new", class:"list-group-item list-group-item-action"}
           登録
-        %a{href:"/regulars/#{current_user.id}", class:"list-group-item list-group-item-action"}
+        %a{href:"/costs/#{current_user.id}", class:"list-group-item list-group-item-action"}
           確認
+    .Menu__down
+      .Menu__down__breakdown
+        = link_to '内訳書', "/breakdowns", class:"btn btn-outline-danger"
+      .Menu__down__admin
+        = link_to '管理画面', "/contracts", class:"btn btn-secondary"
+          
 
   .Main__logout
     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button--logout'

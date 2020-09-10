@@ -5,7 +5,7 @@ class RegularsController < ApplicationController
 
   def new
     @regular = Regular.new
-    @contracts = Contract.all
+    @contracts = Contract.where(kind: "1").where(active: true)
   end
 
   def create
@@ -29,7 +29,7 @@ class RegularsController < ApplicationController
   end
 
   def search
-    @regular = Regular.search(search_params)
+    @regulars = Regular.search(search_params)
     @contracts = Contract.where(kind: "1")
   end
 

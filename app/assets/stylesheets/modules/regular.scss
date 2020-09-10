@@ -15,8 +15,24 @@
     align-items: center;
     justify-content: center;
 
-    
+    &__icon {
+      margin:100px 10px;
+    }
 
+  }
+
+  &__down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__breakdown{
+      margin-top: 100px;
+    }
+
+    &__admin{
+      margin-top: 100px;
+    }
   }
 }
 
@@ -43,9 +59,56 @@
     }
   }
 
+  &__show{
+    overflow: scroll; 
+    height: 500px;
+  }
+
 }
 
 .table_style{
-  padding: 15px;
+  padding: 5px 15px;
   text-align: center;
+}
+
+.Period{
+
+  margin-left: 150px;
+  text-decoration: underline;
+  font-size: 25px;
+}
+
+.Breakdown{
+
+  display: flex;
+  margin-left: 150px;
+
+
+
+  &__show{
+
+    margin-top: 40px;
+
+  }
+
+  &__amount{
+
+    margin-top: 85px;
+    margin-left: 50px;
+  }
+}
+
+.Breakdownbottom{
+
+  margin: 50px 0 0 150px;
+  display: flex;
+
+  &__amount{
+    margin: 40px 0 0 150px;
+  }
+
+  &__btn{
+    margin-top: 20px;
+    margin-left: 150px;
+  }
 }

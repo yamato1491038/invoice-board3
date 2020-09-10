@@ -11,6 +11,8 @@
         - @contracts.each do |contract|
           %th.table_style
             = contract.name
+        %th.table_style
+          削除ボタン
       - @persuations.each do |persuation|
         %tr
           %td.table_style
@@ -26,3 +28,5 @@
                 = 0
           %td.table_style
             = link_to '削除', "/persuations/#{persuation.id}", method: :delete, class:"btn btn-danger"
+  .Regular__return
+    = link_to "戻る","/regulars",class: 'btn btn-secondary'

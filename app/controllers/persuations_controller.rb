@@ -2,6 +2,7 @@ class PersuationsController < ApplicationController
 
   def new
     @persuation = Persuation.new
+    @contracts = Contract.where(kind: "2").where(active: true)
   end
 
   def create

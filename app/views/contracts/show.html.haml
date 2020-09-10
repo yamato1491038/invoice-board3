@@ -1,0 +1,39 @@
+.wrapper
+  .Title
+    契約管理画面
+  .Regular__show
+    %table{border: "1"}
+      %tr
+        %th.table_style
+          契約名
+        %th.table_style
+          単価
+        %th.table_style
+          種類(1.定期 2.説得)
+        %th.table_style
+          表示
+        %th.table_style
+          表示変更
+        %th.table_style
+          修正ボタン
+        -#%th.table_style
+        -#  削除ボタン
+      - @contracts.each do |contract|
+        %tr
+          %td.table_style
+            = contract.name
+          %td.table_style
+            = contract.money
+          %td.table_style
+            = contract.kind
+          %td.table_style
+            = contract.active
+          %td.table_style
+            = form_with model: contract, local: true do |f|
+              = f.select :active, [['非表示',0],['表示',1]], { include_blank: true} ,class:""
+              %td.table_style
+                = f.submit '修正', class:"btn btn-warning"
+          -# %td.table_style
+            -# = link_to '削除', "/contracts/#{contract.id}", method: :delete, class:"btn btn-danger"
+  .Regular__return
+    = link_to "管理画面へ戻る","/contracts",class: 'btn btn-secondary'
