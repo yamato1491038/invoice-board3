@@ -2,6 +2,13 @@
   .Title
     説得費登録
   .Regular
+    - if @persuation.errors.any?
+      .Regular__errors
+        .Regular__errors__content
+          %h2= "#{@persuation.errors.full_messages.count}件のエラーが発生しました。"
+          %ul
+            - @persuation.errors.full_messages.each do |message|
+              %li= message
     .Regular__table
       = form_with model: @persuation, local: true do |f|
         .Regular__table__content

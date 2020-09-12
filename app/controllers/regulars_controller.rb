@@ -13,7 +13,9 @@ class RegularsController < ApplicationController
     if @regular.save
       redirect_to root_path, notice: '調査費登録しました'
     else
+      @contracts = Contract.where(kind: "1").where(active: true)
       render :new
+      # redirect_to new_regular_path, alert: '入力に誤りがあります'
     end
   end
 

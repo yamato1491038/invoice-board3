@@ -2,6 +2,13 @@
   .Title
     諸経費登録
   .Regular
+    - if @cost.errors.any?
+      .Regular__errors
+        .Regular__errors__content
+          %h2= "#{@cost.errors.full_messages.count}件のエラーが発生しました。"
+          %ul
+            - @cost.errors.full_messages.each do |message|
+              %li= message
     .Regular__table
       = form_with model: @cost, local: true do |f|
         .Regular__table__content

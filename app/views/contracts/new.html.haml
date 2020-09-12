@@ -2,6 +2,13 @@
   .Title
     契約登録
   .Regular
+    - if @contract.errors.any?
+      .Regular__errors
+        .Regular__errors__content
+          %h2= "#{@contract.errors.full_messages.count}件のエラーが発生しました。"
+          %ul
+            - @contract.errors.full_messages.each do |message|
+              %li= message
     .Regular__table
       = form_with model: @contract, local: true do |f|
         .Regular__table__content

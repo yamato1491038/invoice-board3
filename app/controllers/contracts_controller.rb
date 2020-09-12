@@ -32,8 +32,11 @@ class ContractsController < ApplicationController
 
   def destroy
     contract = Contract.find(params[:id])
-    contract.destroy
-    redirect_to contract_path, notice: "選んだ契約を削除しました"
+    if contract.destroy
+      redirect_to contract_path, notice: "選んだ契約を削除しました"
+    else
+      redirect_to contract_path, alert: "使用中のため削除できません"
+    end
   end
 
   def search

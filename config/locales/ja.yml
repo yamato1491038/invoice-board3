@@ -1,6 +1,32 @@
 ---
 ja:
   activerecord:
+    models:
+      regular: 定期巡回
+      persuation: 説得費
+      traffic: 交通費
+      cost: 諸経費
+      contract: 契約
+    attributes:
+      regular:
+        dating: 日付
+        hno: ホームナンバー
+        contract_ids: 定期巡回費
+      persuation:
+        dating: 日付
+        hno: ホームナンバー
+        contract_ids: 説得費
+      traffic:
+        dating: 日付
+        hno: ホームナンバー
+      cost:
+        dating: 日付
+        hno: ホームナンバー
+      contract:
+        name: 契約名
+        money: 単価
+        kind: 種類
+
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

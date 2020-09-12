@@ -10,6 +10,7 @@ class PersuationsController < ApplicationController
     if @persuation.save
       redirect_to root_path, notice: '調査費登録しました'
     else
+      @contracts = Contract.where(kind: "2").where(active: true)
       render :new
     end
   end

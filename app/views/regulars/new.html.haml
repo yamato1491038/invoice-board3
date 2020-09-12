@@ -2,6 +2,13 @@
   .Title
     調査費登録
   .Regular
+    - if @regular.errors.any?
+      .Regular__errors
+        .Regular__errors__content
+          %h2= "#{@regular.errors.full_messages.count}件のエラーが発生しました。"
+          %ul
+            - @regular.errors.full_messages.each do |message|
+              %li= message
     .Regular__table
       = form_with model: @regular, local: true do |f|
         .Regular__table__content
