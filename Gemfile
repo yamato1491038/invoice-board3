@@ -60,3 +60,7 @@ gem 'pry-rails'
 
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+
+group :production do
+  gem 'pg' 
+end
