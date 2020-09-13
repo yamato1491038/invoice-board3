@@ -24,6 +24,8 @@ class TrafficsController < ApplicationController
   end
 
   def search
+    @year = params["dating(1i)"]
+    @month = params["dating(2i)"]
     @traffics = Traffic.search(search_params)
   end
 

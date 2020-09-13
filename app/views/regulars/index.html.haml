@@ -5,42 +5,54 @@
     .Menu__list
       .Menu__list__icon.list-group
         %a{href:"#", class:"list-group-item btn-danger list-group-item-action active" }
-          調査費
+          .font_big
+            調査費
         %a{href:"regulars/new", class:"list-group-item list-group-item-action"}
-          登録
+          .font_middle
+            登録
         %a{href:"/regulars/#{current_user.id}", class:"list-group-item list-group-item-action"}
-          確認
+          .font_middle
+            確認
 
       .Menu__list__icon.list-group
         %a{href:"#", class:"list-group-item btn-warning list-group-item-action active" }
-          説得費
+          .font_big
+            説得費
         %a{href:"/persuations/new", class:"list-group-item list-group-item-action"}
-          登録
+          .font_middle
+            登録
         %a{href:"/persuations/#{current_user.id}", class:"list-group-item list-group-item-action"}
-          確認
+          .font_middle
+            確認
 
       .Menu__list__icon.list-group
         %a{href:"#", class:"list-group-item btn-success list-group-item-action active" }
-          交通費
+          .font_big
+            交通費
         %a{href:"traffics/new", class:"list-group-item list-group-item-action"}
-          登録
+          .font_middle
+            登録
         %a{href:"/traffics/#{current_user.id}", class:"list-group-item list-group-item-action"}
-          確認
+          .font_middle
+            確認
 
       .Menu__list__icon.list-group
-        %a{href:"#", class:"list-group-item btn-info list-group-item-action active" }
-          諸経費
+        %a{href:"#", class:"list-group-item btn-info list-group-item-action active"}
+          .font_big
+            諸経費
         %a{href:"costs/new", class:"list-group-item list-group-item-action"}
-          登録
+          .font_middle
+            登録
         %a{href:"/costs/#{current_user.id}", class:"list-group-item list-group-item-action"}
-          確認
+          .font_middle
+            確認
     .Menu__down
       .Menu__down__breakdown
-        = link_to '内訳書', "/breakdowns", class:"btn btn-outline-danger"
+        = link_to '内訳書', "/breakdowns", class:"btn btn-lg btn-outline-danger "
       
       .Menu__down__logout
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn btn-primary'
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn btn-lg btn-primary'
 
     .Menu__admin
       .Menu__admin__button
-      = link_to '管理画面', "/contracts", class:"btn btn-secondary"
+      = link_to '管理画面', "/contracts", class:"btn btn-lg btn-secondary"

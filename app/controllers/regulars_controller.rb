@@ -31,6 +31,8 @@ class RegularsController < ApplicationController
   end
 
   def search
+    @year = params["dating(1i)"]
+    @month = params["dating(2i)"]
     @regulars = Regular.search(search_params)
     @contracts = Contract.where(kind: "1")
   end

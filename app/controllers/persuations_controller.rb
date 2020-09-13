@@ -26,6 +26,8 @@ class PersuationsController < ApplicationController
   end
 
   def search
+    @year = params["dating(1i)"]
+    @month = params["dating(2i)"]
     @persuations = Persuation.search(search_params)
     @contracts = Contract.where(kind: "2")
   end

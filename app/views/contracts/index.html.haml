@@ -5,16 +5,21 @@
     .Menu__list
       .Menu__list__icon.list-group
         %a{href:"#", class:"list-group-item btn-danger list-group-item-action active" }
-          契約管理
+          .font_big
+            契約管理
         %a{href:"/contracts/new", class:"list-group-item list-group-item-action"}
-          登録
+          .font_middle
+            登録
         %a{href:"/contracts/:id", class:"list-group-item list-group-item-action"}
-          確認
+          .font_middle
+            確認
 
       .Menu__list__icon.list-group
         %a{href:"#", class:"list-group-item btn-warning list-group-item-action active" }
-          内訳書
+          .font_big
+            内訳書
         %a{href:"/breakdowns/:id", class:"list-group-item list-group-item-action"}
-          確認
+          .font_middle
+            確認
     .Menu__down
-      = link_to "戻る","/regulars",class: 'btn-sized btn btn-secondary'
+      = link_to "戻る","/regulars",class: 'btn-lg btn btn-secondary'

@@ -24,6 +24,8 @@ class CostsController < ApplicationController
   end
 
   def search
+    @year = params["dating(1i)"]
+    @month = params["dating(2i)"]
     @costs = Cost.search(search_params)
   end
 

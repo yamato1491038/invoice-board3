@@ -98,7 +98,7 @@
 
     &__table{
       overflow: scroll; 
-      height: 500px;
+      height: 450px;
       
     }
   }
@@ -124,6 +124,15 @@
 .Period{
 
   margin-left: 150px;
+  text-decoration: underline;
+  font-size: 25px;
+
+}
+
+.Periodcenter{
+
+  display: flex;
+  justify-content: center;
   text-decoration: underline;
   font-size: 25px;
 }
@@ -165,6 +174,22 @@
     margin-top: 20px;
     margin-left: 150px;
   }
+}
+
+.font_big{
+  font-size: 23px;
+}
+
+.btn_big {
+  padding: 14px 24px;
+  border: 0 none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 23px;
+}
+
+.font_middle{
+  font-size: 19px;
 }
 
 footer{
