@@ -11,7 +11,7 @@ class ContractsController < ApplicationController
   def create
     @contract = Contract.new(contract_params)
     if @contract.save
-      redirect_to root_path, notice: '契約登録しました'
+      redirect_to contracts_path, notice: '契約登録しました'
     else
       render :new
     end
