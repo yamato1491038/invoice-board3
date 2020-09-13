@@ -31,10 +31,16 @@ class RegularsController < ApplicationController
   end
 
   def search
-    @year = params["dating(1i)"]
-    @month = params["dating(2i)"]
-    @regulars = Regular.search(search_params)
-    @contracts = Contract.where(kind: "1")
+    search_action(params)
+  end
+
+  def check
+    if params[:user_id].present?
+      @name = User.find(params[:user_id]).name
+      search_action(params)
+    else
+      redirect_to breakdown_path(:id), alert: "ユーザーの選択がありません"
+    end
   end
 
   private
@@ -44,5 +50,12 @@ class RegularsController < ApplicationController
 
   def search_params
     params.merge(user_id: current_user.id)
+  end
+
+  def search_action(params)
+    @year = params["dating(1i)"]
+    @month = params["dating(2i)"]
+    @regulars = Regular.search(search_params)
+    @contracts = Contract.where(kind: "1")
   end
 end

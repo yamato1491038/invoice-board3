@@ -7,24 +7,28 @@ Rails.application.routes.draw do
   resources :regulars, only: [:index, :new, :create, :show, :destroy] do
     collection do
       get 'search'
+      get 'check'
     end
   end
 
   resources :persuations, only: [:new, :create, :show, :destroy] do
     collection do
       get 'search'
+      get 'check'
     end
   end
 
   resources :traffics, only: [:new, :create, :show, :destroy] do
     collection do
       get 'search'
+      get 'check'
     end
   end
 
   resources :costs, only: [:new, :create, :show, :destroy] do
     collection do
       get 'search'
+      get 'check'
     end
   end
 

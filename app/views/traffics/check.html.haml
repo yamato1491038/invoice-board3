@@ -1,12 +1,13 @@
 .wrapper
   .Title
-    諸経費検索結果
+    交通費検索結果
   .Periodcenter
     .Periodcenter__content
+      = "#{@name}さん"
       = "#{@year}年#{@month}月分"
   .Regular__show
     .Regular__show__table
-      - if @costs.present?
+      - if @traffics.present?
         %table{border: "1"}
           %tr
             %th.table_style
@@ -14,28 +15,32 @@
             %th.table_style
               HNO
             %th.table_style
-              通行費･駐車料
+              方面、区間
             %th.table_style
-              通信費･消耗品費
+              走行距離(km)
             %th.table_style
-              内訳詳細
+              交通料金(円)
+            %th.table_style
+              詳細
             %th.table_style
               削除ボタン
-          - @costs.each do |cost|
+          - @traffics.each do |traffic|
             %tr
               %td.table_style
-                = cost.dating
+                = traffic.dating
               %td.table_style
-                = cost.hno
+                = traffic.hno
               %td.table_style
-                = cost.parking
+                = traffic.field
               %td.table_style
-                = cost.fee
+                = traffic.distance
               %td.table_style
-                = cost.content
+                = traffic.fee
               %td.table_style
-                = link_to '削除', "/costs/#{cost.id}", method: :delete, class:"btn btn-danger"
+                = traffic.content
+              %td.table_style
+                = link_to '削除', "/traffics/#{traffic.id}", method: :delete, class:"btn btn-danger"
       - else
         該当の月はありません
   .Regular__return
-    = link_to "戻る","/regulars",class: 'btn-sized btn btn-secondary'
+    = link_to "戻る","/breakdowns/:id",class: 'btn-sized btn btn-secondary'
