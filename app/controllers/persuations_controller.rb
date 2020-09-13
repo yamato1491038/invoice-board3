@@ -22,7 +22,7 @@ class PersuationsController < ApplicationController
   def destroy
     persuation = Persuation.find(params[:id])
     persuation.destroy
-    redirect_to root_path, notice: "選んだ説得費を削除しました"
+    redirect_to persuation_path, notice: "選んだ説得費を削除しました"
   end
 
   def search

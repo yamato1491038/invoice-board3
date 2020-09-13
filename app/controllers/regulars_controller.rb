@@ -27,7 +27,7 @@ class RegularsController < ApplicationController
   def destroy
     regular = Regular.find(params[:id])
     regular.destroy
-    redirect_to root_path, notice: "選んだ調査費を削除しました"
+    redirect_to regular_path, notice: "選んだ調査費を削除しました"
   end
 
   def search

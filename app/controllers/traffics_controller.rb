@@ -20,7 +20,7 @@ class TrafficsController < ApplicationController
   def destroy
     traffic = Traffic.find(params[:id])
     traffic.destroy
-    redirect_to root_path, notice: "選んだ交通費を削除しました"
+    redirect_to traffic_path, notice: "選んだ交通費を削除しました"
   end
 
   def search

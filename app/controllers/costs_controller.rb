@@ -20,7 +20,7 @@ class CostsController < ApplicationController
   def destroy
     cost = Cost.find(params[:id])
     cost.destroy
-    redirect_to root_path, notice: "選んだ諸経費を削除しました"
+    redirect_to cost_path, notice: "選んだ諸経費を削除しました"
   end
 
   def search
