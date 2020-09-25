@@ -8,4 +8,4 @@
         %a{class: "dropdown-item", href: '/regulars/new'}
           登録
         %a{class: "dropdown-item", href: "/regulars/#{current_user.id}"}
-          確認
+          確認  
