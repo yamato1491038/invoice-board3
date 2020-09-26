@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_05_062119) do
+ActiveRecord::Schema.define(version: 2020_09_26_104418) do
 
   create_table "contracts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -69,6 +69,15 @@ ActiveRecord::Schema.define(version: 2020_09_05_062119) do
     t.index ["user_id"], name: "index_regulars_on_user_id"
   end
 
+  create_table "settlements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "dating", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "settler", null: false
+    t.index ["user_id"], name: "index_settlements_on_user_id"
+  end
+
   create_table "traffics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "dating", null: false
     t.integer "hno", null: false
@@ -103,5 +112,6 @@ ActiveRecord::Schema.define(version: 2020_09_05_062119) do
   add_foreign_key "regular_contracts", "contracts"
   add_foreign_key "regular_contracts", "regulars"
   add_foreign_key "regulars", "users"
+  add_foreign_key "settlements", "users"
   add_foreign_key "traffics", "users"
 end

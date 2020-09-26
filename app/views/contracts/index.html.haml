@@ -21,5 +21,12 @@
         %a{href:"/breakdowns/:id", class:"list-group-item list-group-item-action"}
           .font_middle
             確認
+      .Menu__list__icon.list-group
+        %a{href:"#", class:"list-group-item btn-info list-group-item-action active" }
+          .font_big
+            決済
+        %a{href:"#", class:"list-group-item list-group-item-action"}
+          .font_middle
+            取消
     .Menu__down
       = link_to "戻る","/regulars",class: 'btn-lg btn btn-secondary'

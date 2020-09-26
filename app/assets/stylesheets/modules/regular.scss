@@ -193,6 +193,37 @@
   font-size: 19px;
 }
 
+.Undercontents{
+
+  display: flex;
+  justify-content: space-between;
+
+  &__settlement{
+    margin-right: 100px;
+  }
+}
+
+.table_settlement{
+
+  height: 70px;
+  width: 80px;
+}
+
+.hanko{
+
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  text-align:center;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 42px;
+  border-radius: 50%;
+  border: solid 4px red;
+  color: red;
+
+}
+
 footer{
   text-align: center;
   height: 30px;
