@@ -6,7 +6,9 @@ class TrafficsController < ApplicationController
 
   def create
     @traffic = Traffic.new(traffic_params)
-    if @traffic.save
+    if params[:traffic][:dating].present? && Closing.check(traffic_params)
+      redirect_to root_path, alert: '申請済のため入力できません'
+    elsif @traffic.save
       redirect_to root_path, notice: '交通費登録しました'
     else
       render :new

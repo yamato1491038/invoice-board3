@@ -4,5 +4,22 @@
   .Period
     = "#{@year}年#{@month}月分"
   = render partial: "results", locals: { }
-
-  = link_to "戻る","/breakdowns", class: 'btn btn-secondary Breakdownbottom__btn btn-lg'
+  .Undercontents
+    .Undercontents__button
+      = link_to "戻る","/breakdowns", class: 'btn btn-lg btn-secondary Breakdownbottom__btn'
+    .Undercontents__settlement
+      %table{border: "1"}
+        %tr
+          %th.table_style
+            締め申請
+        %tr
+          %td.table_style.table_settlement
+            - if @closing.present?
+              .hanko_closing
+                申請済
+            - else
+              = form_with url: closings_path, local: true, method: :post do |f|
+                = f.hidden_field :dating, value: "#{@year}-#{@month}-01"
+                = f.hidden_field :user_id, value: current_user.id
+                = f.submit '締め', class: 'btn-lg btn btn-outline-danger'
+                

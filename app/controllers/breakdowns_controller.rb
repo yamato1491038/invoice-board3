@@ -52,6 +52,8 @@ class BreakdownsController < ApplicationController
     @settlement2 = Settlement.search(params).where(settler: 2)
     @settlement3 = Settlement.search(params).where(settler: 3)
     @settlement4 = Settlement.search(params).where(settler: 4)
+
+    @closing = Closing.search(params)
   end
 
   def search_params

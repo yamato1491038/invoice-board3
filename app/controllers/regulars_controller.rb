@@ -10,14 +10,13 @@ class RegularsController < ApplicationController
 
   def create
     @regular = Regular.new(regular_params)
-    if time_params.year == 2020 && time_params.month == 9
-      redirect_to root_path, alert: '決済ずみのため入力できません'
+    if params[:regular][:dating].present? && Closing.check(regular_params)
+      redirect_to root_path, alert: '申請済のため入力できません'
     elsif @regular.save
       redirect_to root_path, notice: '調査費登録しました'
     else
       @contracts = Contract.where(kind: "1").where(active: true)
       render :new
-      # redirect_to new_regular_path, alert: '入力に誤りがあります'
     end
   end
 
@@ -61,7 +60,4 @@ class RegularsController < ApplicationController
     @contracts = Contract.where(kind: "1")
   end
 
-  def time_params
-    params[:regular][:dating].in_time_zone
-  end
 end

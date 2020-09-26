@@ -6,7 +6,9 @@ class CostsController < ApplicationController
 
   def create
     @cost = Cost.new(cost_params)
-    if @cost.save
+    if params[:cost][:dating].present? && Closing.check(cost_params)
+      redirect_to root_path, alert: '申請済のため入力できません'
+    elsif @cost.save
       redirect_to root_path, notice: '諸経費登録しました'
     else
       render :new
