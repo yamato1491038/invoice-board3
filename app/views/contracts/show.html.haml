@@ -10,13 +10,11 @@
           %th.table_style
             単価
           %th.table_style
-            種類(1.定期 2.説得)
+            種類
           %th.table_style
-            表示
+            登録可能
           %th.table_style
-            表示変更
-          %th.table_style
-            修正ボタン
+            可否変更
           %th.table_style
             削除ボタン
         - @contracts.each do |contract|
@@ -26,14 +24,26 @@
             %td.table_style
               = contract.money
             %td.table_style
-              = contract.kind
+              - if contract.kind == 1
+                定期巡回費
+              - else 
+                説得費
             %td.table_style
-              = contract.active
+              - if contract.active?
+                .Green_font
+                  登録可
+              - else
+                .Red_font
+                  登録不可
             %td.table_style
-              = form_with model: contract, local: true do |f|
-                = f.select :active, [['非表示',0],['表示',1]], { include_blank: true} ,class:""
-                %td.table_style
-                  = f.submit '修正', class:"btn btn-warning"
+              - if contract.active?
+                = form_with model: contract, local: true do |f|
+                  = f.hidden_field :active, value: false
+                  = f.submit '不可', class:"btn btn-warning"
+              - else
+                = form_with model: contract, local: true do |f|
+                  = f.hidden_field :active, value: true
+                  = f.submit '可能', class:"btn btn-warning"
             %td.table_style
               = link_to '削除', "/contracts/#{contract.id}", method: :delete, class:"btn btn-danger"
   .Regular__return

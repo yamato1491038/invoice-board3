@@ -45,6 +45,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :settlements, only: [:create, :show, :destroy]
+  resources :settlements, only: [:index, :create, :show, :destroy]
   resources :closings, only: [:create, :show, :destroy]
 end

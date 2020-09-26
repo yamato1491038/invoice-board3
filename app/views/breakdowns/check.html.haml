@@ -19,7 +19,9 @@
             部長
         %tr
           %td.table_style.table_settlement
-            - if @settlement4.present?
+            - if @closing.empty?
+              未申請
+            - elsif @settlement4.present?
               .hanko
                 担当
             - elsif current_user.id == 4
@@ -30,6 +32,8 @@
                 = f.submit '決済', class: 'btn-lg btn btn-outline-danger'
             - else
           %td.table_style.table_settlement
+            - if @closing.empty?
+              未申請
             - if @settlement3.present?
               .hanko
                 課長
@@ -42,6 +46,8 @@
             - else
 
           %td.table_style.table_settlement
+            - if @closing.empty?
+              未申請
             - if @settlement2.present?
               .hanko
                 部長

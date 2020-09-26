@@ -9,6 +9,11 @@ class ClosingsController < ApplicationController
   end
 
   def destroy
+    closings = Closing.where(user_id: params[:user_id]).where(dating: params[:dating])
+    closings.destroy_all
+    settlements = Settlement.where(user_id: params[:user_id]).where(dating: params[:dating])
+    settlements.destroy_all
+    redirect_to settlements_path, notice: "締めを削除しました"
   end
 
   private

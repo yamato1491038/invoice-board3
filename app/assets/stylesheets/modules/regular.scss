@@ -209,6 +209,10 @@
   width: 80px;
 }
 
+.table_closing{
+  height: 40px;
+}
+
 .hanko{
 
   display: inline-block;
@@ -235,6 +239,14 @@
   line-height: 42px;
   border-radius: 30%;
   border: solid 4px red;
+  color: red;
+}
+
+.Green_font{
+  color: green;
+}
+
+.Red_font{
   color: red;
 }
 

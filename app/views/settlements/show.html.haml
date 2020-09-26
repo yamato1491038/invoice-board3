@@ -1,0 +1,48 @@
+.wrapper
+  .Title
+    締め･決済状況
+  .Periodcenter
+    .Periodcenter__content
+      = "#{@year}年#{@month}月分"
+  .Regular__show
+    .Regular__show__table
+      ※締めを解除すると決済も全て解除されます
+      %table{border: "1"}
+        %tr
+          %th.table_style
+            コミュニケーター
+          %th.table_style
+            締め状況
+          %th.table_style
+            担当者決済
+          %th.table_style
+            課長決済
+          %th.table_style
+            部長決済
+        - @user.each do |user|
+          %tr
+            %td.table_style.table_closing
+              = user.name
+            %td.table_style
+              - if @closing_array.include?(user.id)
+                = form_with url: "/closings/:id", local: true, method: :delete, class: "" do |f|
+                  = f.hidden_field :dating, value: "#{@year}-#{@month}-01"
+                  = f.hidden_field :user_id, value: user.id
+                  = f.submit "締めを解除", class: "btn btn-lg btn-danger"
+            %td.table_style
+              - @settlements.each do |settlement|
+                - if settlement.user_id == user.id && settlement.settler == 4
+                  決済ずみ
+                  - break
+            %td.table_style
+              - @settlements.each do |settlement|
+                - if settlement.user_id == user.id && settlement.settler == 3
+                  決済ずみ
+                  - break
+            %td.table_style
+              - @settlements.each do |settlement|
+                - if settlement.user_id == user.id && settlement.settler == 3
+                  決済ずみ
+                  - break
+  .Regular__return
+    = link_to "戻る","/settlements",class: 'btn-sized btn btn-secondary'
