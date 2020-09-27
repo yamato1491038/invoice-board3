@@ -40,12 +40,12 @@
                         %h5
                           本当に削除しますか？締めを解除すると全ての決済も解除されます。
                       .modal-footer
-                        %button.btn.btn-default{type:'button', data:{dismiss:'modal'}}
+                        %button.btn.btn-lg.btn-secondary.btn-default{type:'button', data:{dismiss:'modal'}}
                           戻る
                         = form_with url: "/closings/:id", local: true, method: :delete, class: "" do |f|
                           = f.hidden_field :dating, value: "#{@year}-#{@month}-01"
                           = f.hidden_field :user_id, value: user.id
-                          = f.submit "締めを解除#{user.id}", class: "btn btn-lg btn-danger"
+                          = f.submit "締めを解除", class: "btn btn-lg btn-danger"
             %td.table_style
               - @settlements.each do |settlement|
                 - if settlement.user_id == user.id && settlement.settler == 4
@@ -62,4 +62,4 @@
                   決済ずみ
                   - break
   .Regular__return
-    = link_to "戻る","/settlements",class: 'btn-sized btn btn-secondary'
+    = link_to "戻る","/settlements",class: 'btn-sized btn btn-lg btn-secondary'

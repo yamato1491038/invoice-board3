@@ -45,6 +45,24 @@
                   = f.hidden_field :active, value: true
                   = f.submit '可能', class:"btn btn-warning"
             %td.table_style
-              = link_to '削除', "/contracts/#{contract.id}", method: :delete, class:"btn btn-danger"
+              %button.btn.btn-danger{type: "button",data: {toggle: "modal", target: "#staticBackdrop#{contract.id}"}}
+                削除
+              .modal.fade{id: "staticBackdrop#{contract.id}", data: {backdrop: "static", keyboard: "false"}, tabindex: "-1",aria:{labelledby: "staticBackdropLabel", hidden: "true"}}
+                .modal-dialog
+                  .modal-content
+                    .modal-header
+                      %h3.modal-title#staticBackdropLabel
+                        確認
+                      %button.close{type:"button", data:{dismiss: "modal"}, aria:{label: "Close"}}
+                        %span{aria:{hidden: "true"}}
+                          &times;
+                    .modal-body
+                      %h5
+                        本当に削除しますか？すでに登録されている契約は削除できません。
+                    .modal-footer
+                      %button.btn.btn-lg.btn-secondary.btn-default{type:'button', data:{dismiss:'modal'}}
+                        戻る
+                      = link_to "削除", "/contracts/#{contract.id}", method: :delete, class:"btn btn-danger btn-lg"
+                      
   .Regular__return
     = link_to "管理画面へ戻る","/contracts",class: 'btn-lg btn btn-secondary'

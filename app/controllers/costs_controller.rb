@@ -26,7 +26,7 @@ class CostsController < ApplicationController
   end
 
   def search
-    search_action(params)
+    search_action(search_params)
   end
 
   def check
