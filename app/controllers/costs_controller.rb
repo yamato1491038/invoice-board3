@@ -6,7 +6,7 @@ class CostsController < ApplicationController
 
   def create
     @cost = Cost.new(cost_params)
-    if params[:cost][:dating].present? && Closing.check(cost_params)
+    if params[:cost][:dating].present? && Closing.check(cost_params).present?
       redirect_to root_path, alert: '申請済のため入力できません'
     elsif @cost.save
       redirect_to root_path, notice: '諸経費登録しました'
@@ -50,6 +50,6 @@ class CostsController < ApplicationController
   def search_action(params)
     @year = params["dating(1i)"]
     @month = params["dating(2i)"]
-    @costs = Cost.search(search_params)
+    @costs = Cost.search(params)
   end
 end
