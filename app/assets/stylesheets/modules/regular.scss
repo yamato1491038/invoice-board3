@@ -96,13 +96,18 @@
 
       &__settlement{
 
-        height: 130px;
+        height: 180px;
         width: 550px;
         border-radius: 10px; 
         background-color: lightgray;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
+
+        &__check{
+
+          margin-top: 25px;
+        }
       }
     }
   }

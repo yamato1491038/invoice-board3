@@ -18,7 +18,10 @@ class BreakdownsController < ApplicationController
     else
       redirect_to breakdown_path(:id), alert: "ユーザーの選択がありません"
     end
+  end
 
+  def report
+    search_action(search_params)
   end
 
   private
