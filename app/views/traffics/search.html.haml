@@ -38,8 +38,26 @@
               %td.table_style
                 = traffic.content
               %td.table_style
-                = link_to '削除', "/traffics/#{traffic.id}", method: :delete, class:"btn btn-danger"
+                %button.btn.btn-danger{type: "button",data: {toggle: "modal", target: "#staticBackdrop#{traffic.id}"}}
+                  削除
+                .modal.fade{id: "staticBackdrop#{traffic.id}", data: {backdrop: "static", keyboard: "false"}, tabindex: "-1",aria:{labelledby: "staticBackdropLabel", hidden: "true"}}
+                  .modal-dialog
+                    .modal-content
+                      .modal-header
+                        %h3.modal-title#staticBackdropLabel
+                          確認
+                        %button.close{type:"button", data:{dismiss: "modal"}, aria:{label: "Close"}}
+                          %span{aria:{hidden: "true"}}
+                            &times;
+                      .modal-body
+                        %h5
+                          本当に削除しますか？
+                      .modal-footer
+                        %button.btn.btn-lg.btn-secondary.btn-default{type:'button', data:{dismiss:'modal'}}
+                          戻る
+                        = link_to "削除", "/traffics/#{traffic.id}", method: :delete, class:"btn btn-danger btn-lg"
+                
       - else
         該当の月はありません
   .Regular__return
-    = link_to "戻る","/regulars",class: 'btn-sized btn btn-secondary'
+    = link_to "戻る","/regulars",class: 'btn-lg btn btn-secondary'

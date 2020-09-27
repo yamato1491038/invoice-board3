@@ -6,7 +6,9 @@ class TrafficsController < ApplicationController
 
   def create
     @traffic = Traffic.new(traffic_params)
-    if @traffic.save
+    if params[:traffic][:dating].present? && Closing.check(traffic_params).present?
+      redirect_to root_path, alert: '申請済のため入力できません'
+    elsif @traffic.save
       redirect_to root_path, notice: '交通費登録しました'
     else
       render :new
@@ -24,7 +26,7 @@ class TrafficsController < ApplicationController
   end
 
   def search
-    search_action(params)
+    search_action(search_params)
   end
 
   def check
@@ -48,6 +50,6 @@ class TrafficsController < ApplicationController
   def search_action(params)
     @year = params["dating(1i)"]
     @month = params["dating(2i)"]
-    @traffics = Traffic.search(search_params)
+    @traffics = Traffic.search(params)
   end
 end

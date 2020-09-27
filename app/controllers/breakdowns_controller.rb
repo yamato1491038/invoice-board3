@@ -47,6 +47,13 @@ class BreakdownsController < ApplicationController
       @amount_parking += cost.parking if cost.parking?
       @amount_fee2 += cost.fee if cost.fee?
     end
+
+    @userid = params[:user_id]
+    @settlement2 = Settlement.search(params).where(settler: 2)
+    @settlement3 = Settlement.search(params).where(settler: 3)
+    @settlement4 = Settlement.search(params).where(settler: 4)
+
+    @closing = Closing.search(params)
   end
 
   def search_params

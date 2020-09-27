@@ -1,0 +1,11 @@
+.wrapper
+  .Title
+    締め･決済状況確認
+  .Regular__form
+    .Regular__form__content
+      = form_with url: "/settlements/:id", local: true, method: :get, class: "" do |f|
+        = f.label "年月"
+        = f.date_select :dating, {discard_day:true,use_month_numbers:true}, class: 'table_style'
+        = f.submit "検索", class: "btn btn-lg btn-info"
+  .Regular__return
+    = link_to "戻る","/contracts",class: 'btn-lg btn btn-secondary'

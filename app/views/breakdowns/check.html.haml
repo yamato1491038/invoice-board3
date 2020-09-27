@@ -5,4 +5,107 @@
     = "#{@name}さん"
     = "#{@year}年#{@month}月分"
   = render partial: "results", locals: { }
-  = link_to "確認画面へ戻る","/breakdowns/:id", class: 'btn btn-lg btn-secondary Breakdownbottom__btn'
+  .Undercontents
+    .Undercontents__button
+      = link_to "確認画面へ戻る","/breakdowns/:id", class: 'btn btn-lg btn-secondary Breakdownbottom__btn'
+    .Undercontents__settlement
+      %table{border: "1"}
+        %tr
+          %th.table_style
+            担当者
+          %th.table_style
+            課長
+          %th.table_style
+            部長
+        %tr
+          %td.table_style.table_settlement
+            - if @closing.empty?
+              未申請
+            - elsif @settlement4.present?
+              .hanko
+                担当
+            - elsif current_user.id == 4
+              %button.btn-lg.btn.btn-outline-danger{type: "button",data: {toggle: "modal", target: "#staticBackdrop"}}
+                決済
+              .modal.fade{id: "staticBackdrop", data: {backdrop: "static", keyboard: "false"}, tabindex: "-1",aria:{labelledby: "staticBackdropLabel", hidden: "true"}}
+                .modal-dialog
+                  .modal-content
+                    .modal-header
+                      %h3.modal-title#staticBackdropLabel
+                        確認
+                      %button.close{type:"button", data:{dismiss: "modal"}, aria:{label: "Close"}}
+                        %span{aria:{hidden: "true"}}
+                          &times;
+                    .modal-body
+                      %h5
+                        本当に決済しますか？確認漏れはありませんか？
+                    .modal-footer
+                      %button.btn.btn-lg.btn-secondary.btn-default{type:'button', data:{dismiss:'modal'}}
+                        戻る
+                      = form_with url: settlements_path, local: true, method: :post do |f|
+                        = f.hidden_field :dating, value: "#{@year}-#{@month}-01"
+                        = f.hidden_field :user_id, value: @userid
+                        = f.hidden_field :settler, value: current_user.id
+                        = f.submit '決済', class: 'btn-lg btn btn-outline-danger'
+            - else
+          %td.table_style.table_settlement
+            - if @closing.empty?
+              未申請
+            - elsif @settlement3.present?
+              .hanko
+                課長
+            - elsif current_user.id == 3
+              %button.btn-lg.btn.btn-outline-danger{type: "button",data: {toggle: "modal", target: "#staticBackdrop"}}
+                決済
+              .modal.fade{id: "staticBackdrop", data: {backdrop: "static", keyboard: "false"}, tabindex: "-1",aria:{labelledby: "staticBackdropLabel", hidden: "true"}}
+                .modal-dialog
+                  .modal-content
+                    .modal-header
+                      %h3.modal-title#staticBackdropLabel
+                        確認
+                      %button.close{type:"button", data:{dismiss: "modal"}, aria:{label: "Close"}}
+                        %span{aria:{hidden: "true"}}
+                          &times;
+                    .modal-body
+                      %h5
+                        本当に決済しますか？確認漏れはありませんか？
+                    .modal-footer
+                      %button.btn.btn-lg.btn-secondary.btn-default{type:'button', data:{dismiss:'modal'}}
+                        戻る
+                      = form_with url: settlements_path, local: true, method: :post do |f|
+                        = f.hidden_field :dating, value: "#{@year}-#{@month}-01"
+                        = f.hidden_field :user_id, value: @userid
+                        = f.hidden_field :settler, value: current_user.id
+                        = f.submit '決済', class: 'btn-lg btn btn-outline-danger'
+            - else
+
+          %td.table_style.table_settlement
+            - if @closing.empty?
+              未申請
+            - elsif @settlement2.present?
+              .hanko
+                部長
+            - elsif current_user.id == 2
+              %button.btn-lg.btn.btn-outline-danger{type: "button",data: {toggle: "modal", target: "#staticBackdrop"}}
+                決済
+              .modal.fade{id: "staticBackdrop", data: {backdrop: "static", keyboard: "false"}, tabindex: "-1",aria:{labelledby: "staticBackdropLabel", hidden: "true"}}
+                .modal-dialog
+                  .modal-content
+                    .modal-header
+                      %h3.modal-title#staticBackdropLabel
+                        確認
+                      %button.close{type:"button", data:{dismiss: "modal"}, aria:{label: "Close"}}
+                        %span{aria:{hidden: "true"}}
+                          &times;
+                    .modal-body
+                      %h5
+                        本当に決済しますか？確認漏れはありませんか？
+                    .modal-footer
+                      %button.btn.btn-lg.btn-secondary.btn-default{type:'button', data:{dismiss:'modal'}}
+                        戻る
+                      = form_with url: settlements_path, local: true, method: :post do |f|
+                        = f.hidden_field :dating, value: "#{@year}-#{@month}-01"
+                        = f.hidden_field :user_id, value: @userid
+                        = f.hidden_field :settler, value: current_user.id
+                        = f.submit '決済', class: 'btn-lg btn btn-outline-danger'
+            - else

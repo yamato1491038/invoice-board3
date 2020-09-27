@@ -4,5 +4,39 @@
   .Period
     = "#{@year}年#{@month}月分"
   = render partial: "results", locals: { }
-
-  = link_to "戻る","/breakdowns", class: 'btn btn-secondary Breakdownbottom__btn btn-lg'
+  .Undercontents
+    .Undercontents__button
+      = link_to "戻る","/breakdowns", class: 'btn btn-lg btn-secondary Breakdownbottom__btn'
+    .Undercontents__settlement
+      %table{border: "1"}
+        %tr
+          %th.table_style
+            締め申請
+        %tr
+          %td.table_style.table_settlement
+            - if @closing.present?
+              .hanko_closing
+                申請済
+            - else
+              %buttonbtn-lg.btn.btn-outline-danger{type: "button",data: {toggle: "modal", target: "#staticBackdrop"}}
+                締め申請
+              .modal.fade{id: "staticBackdrop", data: {backdrop: "static", keyboard: "false"}, tabindex: "-1",aria:{labelledby: "staticBackdropLabel", hidden: "true"}}
+                .modal-dialog
+                  .modal-content
+                    .modal-header
+                      %h3.modal-title#staticBackdropLabel
+                        確認
+                      %button.close{type:"button", data:{dismiss: "modal"}, aria:{label: "Close"}}
+                        %span{aria:{hidden: "true"}}
+                          &times;
+                    .modal-body
+                      %h5
+                        本当に締め申請しますか？申請後は訂正できません。
+                    .modal-footer
+                      %button.btn.btn-lg.btn-secondary.btn-default{type:'button', data:{dismiss:'modal'}}
+                        戻る
+                      = form_with url: closings_path, local: true, method: :post do |f|
+                        = f.hidden_field :dating, value: "#{@year}-#{@month}-01"
+                        = f.hidden_field :user_id, value: current_user.id
+                        = f.submit '締め申請', class: 'btn-lg btn btn-outline-danger'
+                

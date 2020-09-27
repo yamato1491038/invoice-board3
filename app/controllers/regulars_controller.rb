@@ -10,12 +10,13 @@ class RegularsController < ApplicationController
 
   def create
     @regular = Regular.new(regular_params)
-    if @regular.save
+    if params[:regular][:dating].present? && Closing.check(regular_params).present?
+      redirect_to root_path, alert: '申請済のため入力できません'
+    elsif @regular.save
       redirect_to root_path, notice: '調査費登録しました'
     else
       @contracts = Contract.where(kind: "1").where(active: true)
       render :new
-      # redirect_to new_regular_path, alert: '入力に誤りがあります'
     end
   end
 
@@ -31,7 +32,7 @@ class RegularsController < ApplicationController
   end
 
   def search
-    search_action(params)
+    search_action(search_params)
   end
 
   def check
@@ -55,7 +56,8 @@ class RegularsController < ApplicationController
   def search_action(params)
     @year = params["dating(1i)"]
     @month = params["dating(2i)"]
-    @regulars = Regular.search(search_params)
+    @regulars = Regular.search(params)
     @contracts = Contract.where(kind: "1")
   end
+
 end

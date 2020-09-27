@@ -7,7 +7,9 @@ class PersuationsController < ApplicationController
 
   def create
     @persuation = Persuation.new(persuation_params)
-    if @persuation.save
+    if params[:persuation][:dating].present? && Closing.check(persuation_params).present?
+      redirect_to root_path, alert: '申請済のため入力できません'
+    elsif @persuation.save
       redirect_to root_path, notice: '調査費登録しました'
     else
       @contracts = Contract.where(kind: "2").where(active: true)
@@ -26,7 +28,7 @@ class PersuationsController < ApplicationController
   end
 
   def search
-    search_action(params)
+    search_action(search_params)
   end
 
   def check
@@ -50,7 +52,7 @@ class PersuationsController < ApplicationController
   def search_action(params)
     @year = params["dating(1i)"]
     @month = params["dating(2i)"]
-    @persuations = Persuation.search(search_params)
+    @persuations = Persuation.search(params)
     @contracts = Contract.where(kind: "2")
   end
 end

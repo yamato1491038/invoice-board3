@@ -44,4 +44,7 @@ Rails.application.routes.draw do
       get 'check'
     end
   end
+
+  resources :settlements, only: [:index, :create, :show, :destroy]
+  resources :closings, only: [:create, :show, :destroy]
 end
