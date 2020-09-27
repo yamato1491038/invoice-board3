@@ -89,10 +89,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 30px;
 
     &__content{
       margin-top: 40px;
+
+      &__settlement{
+
+        height: 130px;
+        width: 550px;
+        border-radius: 10px; 
+        background-color: lightgray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
 
@@ -107,9 +118,6 @@
       
     }
   }
-
-
-
 }
 
 .table_style{

@@ -3,12 +3,15 @@
     内訳･詳細表示
   .Regular__form
     .Regular__form__content
-      = form_with url: check_breakdowns_path, local: true, method: :get, class: "" do |f|
-        = f.label "コミュニケーター"
-        = f.collection_select(:user_id, User.where(admin: false), :id, :name, {prompt: true}, {class:"table_style"})
-        = f.label "年月"
-        = f.date_select :dating, {discard_day:true,use_month_numbers:true}, class: 'table_style'
-        = f.submit "内訳書検索", class: "btn btn-lg btn-outline-danger"
+      .Regular__form__content__settlement
+        .Regular__form__content__settlement__check
+          ■決済はコチラからです
+          = form_with url: check_breakdowns_path, local: true, method: :get, class: "" do |f|
+            = f.label "コミュニケーター"
+            = f.collection_select(:user_id, User.where(admin: false), :id, :name, {prompt: true}, {class:"table_style"})
+            = f.label "年月"
+            = f.date_select :dating, {discard_day:true,use_month_numbers:true}, class: 'table_style'
+            = f.submit "内訳書検索", class: "btn btn-lg btn-outline-danger"
     .Regular__form__content
       = form_with url: check_regulars_path, local: true, method: :get, class: "" do |f|
         = f.label "コミュニケーター"

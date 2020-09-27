@@ -51,7 +51,7 @@
           %td.table_style.table_settlement
             - if @closing.empty?
               未申請
-            - if @settlement3.present?
+            - elsif @settlement3.present?
               .hanko
                 課長
             - elsif current_user.id == 3
@@ -82,7 +82,7 @@
           %td.table_style.table_settlement
             - if @closing.empty?
               未申請
-            - if @settlement2.present?
+            - elsif @settlement2.present?
               .hanko
                 部長
             - elsif current_user.id == 2
