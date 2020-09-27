@@ -1,0 +1,58 @@
+.wrapper
+  .Title
+    帳票表示
+  .Periodcenter
+    .Periodcenter__content
+      = "#{@year}年#{@month}月分"
+  .Regular__show
+    .Regular__show__table
+      %table{border: "1"}
+        %tr
+          %th.table_style.table_closing
+            コミュニケーター
+          %th.table_style
+            調査費
+          %th.table_style
+            説得費
+          %th.table_style
+            諸経費
+          %th.table_style.table_red
+            総合計
+        - @users.each do |user|
+          %tr
+            %td.table_style.table_closing
+              = user.name
+            %td.table_style
+              - bill1 = 0
+              - @regulars.each do |regular| #ユーザーも契約も混合したものを取り出す
+                - if regular.user_id == user.id #このユーザーが登録したレコードを抜き出す
+                  - @contracts1.each do |contract| #複数の契約を契約ごとに金額足す
+                    - if regular.contracts.include?(contract)
+                      - bill1 += contract.money
+              = bill1 = bill1 + (bill1 * 0.1).floor
+            %td.table_style
+              - bill2 = 0
+              - @persuations.each do |persuation| 
+                - if persuation.user_id == user.id 
+                  - @contracts2.each do |contract|
+                    - if persuation.contracts.include?(contract)
+                      - bill2 += contract.money
+              = bill2 = bill2 + (bill2 * 0.1).floor
+            %td.table_style
+              - @amount_distance = 0
+              - @amount_fee = 0
+              - @traffics.each do |traffic|
+                - if traffic.user_id == user.id
+                  - @amount_distance += traffic.distance * 30 if traffic.distance?
+                  - @amount_fee += traffic.fee if traffic.fee?
+              - @amount_parking = 0
+              - @amount_fee2 = 0
+              - @costs.each do |cost|
+                - if cost.user_id == user.id
+                  - @amount_parking += cost.parking if cost.parking?
+                  - @amount_fee2 += cost.fee if cost.fee?
+              = bill3 = @amount_distance + @amount_fee + @amount_parking + @amount_fee2
+            %td.table_style.table_red
+              = bill1 + bill2 + bill3
+  .Regular__return
+    = link_to "戻る","/breakdowns/:id",class: 'btn-lg btn btn-secondary'

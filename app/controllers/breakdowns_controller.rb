@@ -21,7 +21,18 @@ class BreakdownsController < ApplicationController
   end
 
   def report
-    search_action(search_params)
+    @users = User.where(admin: false)
+    @year = params["dating(1i)"]
+    @month = params["dating(2i)"]
+
+    @regulars = Regular.search_month(params)
+    @persuations = Persuation.search_month(params)
+
+    @contracts1 = Contract.where(kind: "1")
+    @contracts2 = Contract.where(kind: "2")
+
+    @traffics = Traffic.search_month(params)
+    @costs = Cost.search_month(params)
   end
 
   private
