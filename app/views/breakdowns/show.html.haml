@@ -12,6 +12,14 @@
             = f.label "年月"
             = f.date_select :dating, {discard_day:true,use_month_numbers:true}, class: 'table_style'
             = f.submit "内訳書検索", class: "btn btn-lg btn-outline-danger"
+        .Regular__form__content__settlement__check
+          ■帳票確認はコチラからです(コミュニケーター指定は不要です)
+          = form_with url: report_breakdowns_path, local: true, method: :get, class: "" do |f|
+            = f.label "コミュニケーター"
+            = f.collection_select(:user_id, User.where(admin: false), :id, :name, {prompt: true}, {class:"table_style"})
+            = f.label "年月"
+            = f.date_select :dating, {discard_day:true,use_month_numbers:true}, class: 'table_style'
+            = f.submit "月総額検索", class: "btn btn-lg btn-outline-info"
     .Regular__form__content
       = form_with url: check_regulars_path, local: true, method: :get, class: "" do |f|
         = f.label "コミュニケーター"

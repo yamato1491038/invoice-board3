@@ -89,20 +89,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 20px;
 
     &__content{
       margin-top: 40px;
 
       &__settlement{
 
-        height: 130px;
-        width: 550px;
-        border-radius: 10px; 
-        background-color: lightgray;
+        height: 180px;
+        width: 700px;
+        border-bottom: 1px solid black;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
+
+        &__check{
+
+          margin-top: 25px;
+        }
       }
     }
   }
@@ -123,6 +127,10 @@
 .table_style{
   padding: 5px 15px;
   text-align: center;
+}
+
+.table_red{
+  background-color: lightpink;
 }
 
 .check_box{
@@ -218,7 +226,7 @@
 }
 
 .table_closing{
-  height: 40px;
+  height: 35px;
 }
 
 .hanko{
