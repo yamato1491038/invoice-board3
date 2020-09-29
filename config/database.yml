@@ -53,3 +53,4 @@ production:
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
+  host: i-database.c7r7ssbsom65.ap-northeast-1.rds.amazonaws.com
