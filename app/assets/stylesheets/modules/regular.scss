@@ -1,10 +1,12 @@
 .wrapper{
   height: calc(100vh - 30px);
+  overflow: scroll;
 }
 
 .Title{
   text-align: center;
   font-size: 60px;
+  font-weight: bold;
 }
 
 .Menu{
