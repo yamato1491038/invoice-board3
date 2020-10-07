@@ -66,6 +66,7 @@ gem 'pry-rails'
 
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem 'aws-sdk-rails', '~> 3'
 
 group :production do
   gem 'unicorn', '5.4.1'

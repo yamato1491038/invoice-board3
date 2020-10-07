@@ -1,0 +1,12 @@
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %p
+      管理者へ
+      InvoiceBoardからのお知らせ
+    %p
+      = "#{@user.name}さんの#{@year}年#{@month}月度の締め申請が提出されたので確認お願いします。"
+    %p
+      = "#{@url}"
+      からログインして決済をお願いします。
