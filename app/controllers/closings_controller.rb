@@ -2,6 +2,7 @@ class ClosingsController < ApplicationController
 
   def create
     Closing.create(closing_params)
+    ClosingMailer.closing_email(closing_params).deliver_now
     redirect_to root_path, notice: '締め申請しました'
   end
 
