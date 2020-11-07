@@ -1,7 +1,13 @@
 language: ruby
 rvm: 2.6.5
 
+services:
+  - mysql
+
 install: bundle install
+
+before_install:
+  - mysql -e 'CREATE DATABASE invoice_board3_test;'
 
 script:
   - bundle exec rails db:create
