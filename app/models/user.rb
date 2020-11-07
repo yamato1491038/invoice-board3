@@ -8,6 +8,6 @@ class User < ApplicationRecord
   has_many :persuations
   has_many :traffics
   has_many :costs
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: {case_sensitive: true}
 
 end
