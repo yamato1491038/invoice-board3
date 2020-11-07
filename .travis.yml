@@ -23,9 +23,6 @@ before_install:
   - gem install bundler
   - mysql -e 'CREATE DATABASE invoice_board3_test;'
 
-before_script:
-  - "cp config/database_travis.yml config/database.yml"
-
 script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
