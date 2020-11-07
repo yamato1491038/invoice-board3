@@ -21,5 +21,4 @@ before_install:
   - mysql -e 'CREATE DATABASE invoice_board3_test;'
 
 script:
-  - bundle exec rails db:migrate RAILS_ENV=test
   - bundle exec rspec
