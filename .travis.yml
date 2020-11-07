@@ -1,0 +1,6 @@
+language: ruby
+rvm: 2.6.5
+
+install: bundle install --deployment
+
+script: bundle exec rspec
