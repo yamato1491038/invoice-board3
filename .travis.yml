@@ -24,6 +24,7 @@ before_install:
   - mysql -e 'CREATE DATABASE invoice_board3_test;'
 
 script:
+  - sudo touch /tmp/mysql.sock
   - bundle exec rake db:create
   - bundle exec rake db:migrate
   - bundle exec rspec
