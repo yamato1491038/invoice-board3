@@ -4,6 +4,11 @@ rvm: 2.6.5
 services:
   - mysql
 
+branches:
+  only: 
+    - master
+    - test_code_create
+
 install: bundle install
 
 before_install:
@@ -12,4 +17,4 @@ before_install:
 script:
   - bundle exec rails db:create
   - bundle exec rails db:migrate
-  - bundle exec rspec spec
+  - bundle exec rspec
