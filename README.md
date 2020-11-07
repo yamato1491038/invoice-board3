@@ -1,4 +1,5 @@
-![AppVeyor](https://img.shields.io/appveyor/build/yamato1491038/invoice-board3)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/yamato1491038/invoice-board3)
+
 
 # Name
 
