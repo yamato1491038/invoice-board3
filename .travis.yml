@@ -1,0 +1,21 @@
+language: ruby
+
+services:
+  - mysql
+  
+bundler_args: --jobs=3 --retry=3
+cache: bundler
+
+install: bundle install
+
+before_install:
+  - gem install bundler
+  - mysql -e 'CREATE DATABASE invoice_board3_test;'
+
+before_script:
+  - "cp config/database_travis.yml config/database.yml"
+
+script:
+  - bundle exec rake db:create RAILS_ENV=test
+  - bundle exec rake db:migrate RAILS_ENV=test
+  - bundle exec rspec

@@ -1,5 +1,5 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/yamato1491038/invoice-board3)
-
+[![Build Status](https://travis-ci.org/yamato1491038/invoice-board3.svg?branch=master)](https://travis-ci.org/yamato1491038/invoice-board3)
 
 # Name
 
