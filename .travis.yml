@@ -2,20 +2,9 @@ language: ruby
 
 services:
   - mysql
-
-gemfile:
-  - Gemfile
-
-env:
-  - DB=mysql
   
 bundler_args: --jobs=3 --retry=3
 cache: bundler
-
-branches:
-  only: 
-    - master
-    - test_code_create
 
 install: bundle install
 

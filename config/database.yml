@@ -31,7 +31,6 @@ test:
   encoding: utf8
   username: root
   password:
-  socket: /var/run/mysqld/mysqld.sock
 
 
 # As with config/credentials.yml, you never want to store sensitive information,
