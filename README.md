@@ -1,5 +1,5 @@
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/yamato1491038/invoice-board3)
 [![Build Status](https://travis-ci.org/yamato1491038/invoice-board3.svg?branch=master)](https://travis-ci.org/yamato1491038/invoice-board3)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/yamato1491038/invoice-board3)
 
 # Name
 
@@ -18,11 +18,9 @@
 
   Node.js
 
-  Pop.js
-
 ## Infrastructure
 
-AWSを使用しデプロイした。
+AWSを使用しデプロイ。
 
 <img width="1351" alt="デプロイ" src="https://user-images.githubusercontent.com/67918886/98431725-664af280-20fb-11eb-90b7-9742fee841b3.png">
 
@@ -48,6 +46,11 @@ AWSを使用しデプロイした。
 一覧表示とハンコ機能
 
 <img width="1276" alt="決済画面" src="https://user-images.githubusercontent.com/67918886/98431888-cbebae80-20fc-11eb-9766-909035ce4a4a.png">
+
+AWS SESを用いたメール機能（決済後に管理者へお知らせメール）
+
+![IMG_8099](https://user-images.githubusercontent.com/67918886/98459084-7dacdd00-21da-11eb-9717-f8d969913a7e.PNG)
+
 
 
 ## Usage
