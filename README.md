@@ -49,6 +49,8 @@ AWSを使用しデプロイ。
 
 AWS SESを用いたメール機能（決済後に管理者へお知らせメール）
 
+<img src="https://user-images.githubusercontent.com/67918886/98459084-7dacdd00-21da-11eb-9717-f8d969913a7e.PNG" width="500">
+
 ![IMG_8099](https://user-images.githubusercontent.com/67918886/98459084-7dacdd00-21da-11eb-9717-f8d969913a7e.PNG)
 
 
