@@ -39,19 +39,18 @@ AWSを使用しデプロイ。
 
 ## Appearance
 
-アプリトップ画面
+### アプリトップ画面
 
-<img width="1353" alt="ログイン画面" src="https://user-images.githubusercontent.com/67918886/98431800-f6893780-20fb-11eb-9a69-3958ec3b7fc7.png">
+<img width="800" alt="ログイン画面" src="https://user-images.githubusercontent.com/67918886/98431800-f6893780-20fb-11eb-9a69-3958ec3b7fc7.png">
 
-一覧表示とハンコ機能
+### 一覧表示とハンコ機能
 
-<img width="1276" alt="決済画面" src="https://user-images.githubusercontent.com/67918886/98431888-cbebae80-20fc-11eb-9766-909035ce4a4a.png">
+<img width="800" alt="決済画面" src="https://user-images.githubusercontent.com/67918886/98431888-cbebae80-20fc-11eb-9766-909035ce4a4a.png">
 
-AWS SESを用いたメール機能（決済後に管理者へお知らせメール）
+### AWS SESを用いたメール機能（決済後に管理者へお知らせメール）
 
-<img src="https://user-images.githubusercontent.com/67918886/98459084-7dacdd00-21da-11eb-9717-f8d969913a7e.PNG" width="400">
+<img src="https://user-images.githubusercontent.com/67918886/98459084-7dacdd00-21da-11eb-9717-f8d969913a7e.PNG" width="300">
 
-![IMG_8099](https://user-images.githubusercontent.com/67918886/98459084-7dacdd00-21da-11eb-9717-f8d969913a7e.PNG)
 
 
 
