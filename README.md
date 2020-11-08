@@ -17,14 +17,21 @@ https://www.vr-invoice.com/
 ## 使用技術
 
   AWS( ACM / ALB / EC2 / RDS / Route53 / SES )
+
   Travis CI
+
   Ruby 2.6.5
+
   Rails 6.0.0
+
   MySQL2
+
   JavaScript
+
   JQuery
-  Node.js
+
   Rspec
+
   Capistrano
 
 ## インフラ構成図
