@@ -3,7 +3,7 @@
 
 # 名称
 
-  Invoive-board (請求書まとめアプリ)
+  Invoive-board (経費精算アプリ)
 
 ## App URL
 
@@ -36,7 +36,7 @@ https://www.vr-invoice.com/
 
 ## インフラ構成図
 
-AWSを使用しデプロイ。
+AWSを使用しデプロイ
 
 <img width="1351" alt="デプロイ" src="https://user-images.githubusercontent.com/67918886/98431725-664af280-20fb-11eb-90b7-9742fee841b3.png">
 
