@@ -36,7 +36,8 @@ https://www.vr-invoice.com/
 
 ## ER図
 
-[ER-invoice.pdf](https://github.com/yamato1491038/invoice-board3/files/5553152/ER-invoice.pdf)
+![ER-invoice](https://user-images.githubusercontent.com/67918886/99385645-9fae0a00-2914-11eb-9a00-9a8e51ec2677.png)
+
 
 ## インフラ構成図
 
