@@ -34,6 +34,10 @@ https://www.vr-invoice.com/
 
   Capistrano
 
+## ER図
+
+[ER-invoice.pdf](https://github.com/yamato1491038/invoice-board3/files/5553152/ER-invoice.pdf)
+
 ## インフラ構成図
 
 AWSを使用しデプロイ
