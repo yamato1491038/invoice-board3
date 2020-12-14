@@ -16,7 +16,7 @@ https://www.vr-invoice.com/
 
 ## 使用技術
 
-  AWS( ACM / ALB / EC2 / RDS / Route53 / SES )
+  AWS( ACM / ALB / EC2 / RDS / Route53 / SES / CloudFormation )
 
   Travis CI
 
