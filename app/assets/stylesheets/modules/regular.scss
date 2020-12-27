@@ -1,5 +1,5 @@
 .wrapper{
-  height: calc(100vh - 30px);
+  height: 100vh;
   overflow: scroll;
 }
 
@@ -236,11 +236,3 @@
   color: red;
 }
 
-footer{
-  text-align: center;
-  height: 30px;
-  background-color: lightgray;
-  font-size: 13px;
-  color:gray;
-  padding-top: 5px;
-}

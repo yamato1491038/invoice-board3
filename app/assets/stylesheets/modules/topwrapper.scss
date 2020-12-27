@@ -5,4 +5,27 @@
     position: absolute;
     top: 0;
   }
+
+  .TopWrapper__footer{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    height: 30px;
+    width: 100vw;
+    background-color: lightgray;
+    opacity: 0.5;
+    font-size: 13px;
+    padding-top: 5px;
+  }
+
+  .TopWrapper__footer__text{
+    position: absolute;
+    bottom: 0;
+    color:black;
+    text-align: center;
+    font-size: 13px;
+    padding-top: 5px;
+    height: 30px;
+    width: 100vw;
+  }
 }
