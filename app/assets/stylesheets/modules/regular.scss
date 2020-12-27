@@ -9,42 +9,6 @@
   font-weight: bold;
 }
 
-.Menu{
-
-  &__list {
-
-    display: flex;
-    justify-content: center;
-
-    &__icon {
-      margin:100px 10px;
-    }
-
-  }
-
-  &__down {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    padding-top: 50px;
-
-    &__breakdown{
-      margin-right: 30px;
-    }
-
-    
-    &__logout{
-      margin-left: 30px;
-    }
-  }
-
-  &__admin{
-    margin-top: 70px;
-    display: flex;
-    justify-content: center;
-  }
-}
-
 .btn-font-size{
   font-size: 20px;
   display: inline;
