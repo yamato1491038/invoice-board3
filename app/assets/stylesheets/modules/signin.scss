@@ -11,7 +11,7 @@
 
     &__contents{
       position: absolute;
-      top: 200px;
+      top: 170px;
       left: 100px;
       display: flex;
 
@@ -22,7 +22,7 @@
         display: flex;
 
         &__title{
-          margin-top: 20px;
+          margin-top: 30px;
           margin-left: 70px;
           color: white;
           opacity: 0;
@@ -51,7 +51,7 @@
         &__right{
           opacity: 0;
           margin-left: 100px;
-          width: 300px;
+          width: 400px;
 
 
           &__email{
@@ -133,5 +133,4 @@
   .display-none{
     display: none;
   }
-
 }

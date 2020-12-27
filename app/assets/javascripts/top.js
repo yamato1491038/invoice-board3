@@ -8,7 +8,7 @@ $(function(){
 
   setTimeout(function(){
     $('.SigninPage__image__contents__line').animate({
-      'height': '350px'
+      'height': '400px'
     }, 500, function(){
       $('.SigninPage__image__contents__line__title').animate({
         'opacity': '1'
