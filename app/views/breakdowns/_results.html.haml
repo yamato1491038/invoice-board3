@@ -56,7 +56,6 @@
           %th.table_style
             - total1 = bill + tax
             = total1
-
   .Breakdown
     .Breakdown__show
       2.説得費
@@ -95,7 +94,6 @@
                   - count += 1
               - bill += count * contract.money
               = count * contract.money
-
     .Breakdown__amount
       %table{border: "2"}
         %tr
@@ -115,7 +113,6 @@
           %th.table_style
             - total2 = bill + tax
             = total2
-
   .Breakdownbottom
     .Breakdownbottom__traffic
       3.諸経費
@@ -147,7 +144,6 @@
           %th.table_style
             - total3 = @amount_distance + @amount_fee + @amount_parking + @amount_fee2
             = total3
-
     .Breakdownbottom__amount
       %table{border: "2"}
         %tr

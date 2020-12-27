@@ -59,5 +59,4 @@ class RegularsController < ApplicationController
     @regulars = Regular.search(params)
     @contracts = Contract.where(kind: "1")
   end
-
 end

@@ -16,7 +16,7 @@ https://www.vr-invoice.com/
 
 ## 使用技術
 
-  AWS( ACM / ALB / EC2 / RDS / Route53 / SES )
+  AWS( ACM / ALB / EC2 / RDS / Route53 / SES / CloudFormation )
 
   Travis CI
 
@@ -89,7 +89,6 @@ WEB化することにより入力漏れや文字が読めないなどの不備�
 管理側の入力手間も省け、大幅な業務効率化になります。
 
 
-
 ## 工夫したポイント
 
 ### 一覧表示
@@ -107,4 +106,5 @@ WEB化することにより入力漏れや文字が読めないなどの不備�
 ### メール機能
 「info@vr-invoice.com」というようなよくお知らせでくるメールにしたかったのでgmailなどではなく
 AWSのSESを使用。またRoute53で独自ドメイン取得し実装した。
+
 
