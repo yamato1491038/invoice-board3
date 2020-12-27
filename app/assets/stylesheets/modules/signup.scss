@@ -1,0 +1,87 @@
+.SignupPage{
+
+  &__image{
+    background-image:image-url("pc_photo2.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+
+    &__box{
+      margin-top: 100px;
+      padding: 40px 60px;
+      background-color: #EA0032;
+      width: 450px;
+      height: 550px;
+      overflow: scroll;
+
+      &__contents{
+        font-size: 20px;
+        color: white;
+
+        &__user{
+          font-size: 15px;
+          margin-top: 20px;
+
+          &__text{
+
+          }
+
+          &__input{
+
+          }
+        }
+
+        &__submit{
+          margin-top: 30px;
+        }
+      }
+
+      &__bottom{
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .input-signup{
+    padding: 5px;
+    width: 300px;
+  }
+
+  .submit{
+    width: 120px;
+    height: 30px;
+    padding: 0 30px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 13px;
+  }
+
+  .submit-create{
+    background-color: white;
+    border: none;
+    color:  #EA0032;
+  }
+
+  .submit-create:hover{
+    background-color:#EA0032;
+    border: solid 1px white;
+    color:  white;
+  }
+
+  .submit-login{
+    background-color:#EA0032;
+    border: solid 1px white;
+    color:  white;
+  }
+
+  .submit-login:hover{
+    background-color: white;
+    border: none;
+    color:  #EA0032;
+  }
+}

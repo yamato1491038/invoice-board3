@@ -61,5 +61,4 @@ class ContractsController < ApplicationController
       redirect_to root_path, alert: "管理の権限がありません"
     end
   end
-
 end

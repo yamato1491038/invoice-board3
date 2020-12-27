@@ -24,7 +24,7 @@ class SettlementsController < ApplicationController
     
   end
 
-  def destroyse
+  def destroy
   end
 
   private
