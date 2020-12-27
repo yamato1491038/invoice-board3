@@ -18,7 +18,9 @@
         .TopIndex__left__box__logout
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'linktext'
         .TopIndex__left__box__adminmenu
-          = link_to '管理画面', "/contracts", class:"linktext"
+          - if current_user.admin?
+            = link_to '管理画面', "/contracts", class:"linktext"
+            
     .TopIndex__right
       .TopIndex__right__title
         業務登録
