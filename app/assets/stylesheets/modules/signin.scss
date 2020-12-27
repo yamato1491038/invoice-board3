@@ -1,0 +1,137 @@
+.SigninPage{
+  position: relative;
+
+  &__image{
+    background-image:image-url("pc_photo2.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    position: relative;
+    
+
+    &__contents{
+      position: absolute;
+      top: 200px;
+      left: 100px;
+      display: flex;
+
+      &__line{
+        height: 0px;
+        width: 10px;
+        background-color: #EA0032;
+        display: flex;
+
+        &__title{
+          margin-top: 20px;
+          margin-left: 70px;
+          color: white;
+          opacity: 0;
+      
+          &__line1{
+            font-size: 55px;
+            font-weight: bold;
+          }
+
+          &__line2{
+            margin-top: 20px;
+            font-size: 20px;
+          }
+
+          &__line3{
+            margin-top: 80px;
+            display: flex;
+            cursor: pointer;
+
+            &__text{
+              font-size: 20px;
+              margin-left: 30px;
+            }
+          }
+        }
+        &__right{
+          opacity: 0;
+          margin-left: 100px;
+          width: 300px;
+
+
+          &__email{
+            margin-top: 30px;
+            font-size: 15px;
+
+            &__input{
+              
+            }
+          }
+
+          &__password{
+            margin-top: 20px;
+            font-size: 15px;
+          }
+
+          &__login{
+            margin-top: 40px;
+          }
+
+          &__bottom{
+            margin-top: 40px;
+          }
+        }
+      }
+      
+    }
+  }
+
+  &__mask{
+    position:absolute;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+  }
+
+  .input-login{
+    padding: 7px;
+    width: 300px;
+  }
+  .submit{
+    width: 120px;
+    height: 30px;
+    padding: 0 30px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 13px;
+  }
+
+  .submit-login{
+    background-color: white;
+    border: none;
+    color:  #EA0032;
+  }
+
+  .submit-login:hover{
+    background-color:#EA0032;
+    border: solid 1px white;
+    color:  white;
+  }
+
+  .submit-registration{
+    background-color:#EA0032;
+    border: solid 1px white;
+    color:  white;
+  }
+
+  .submit-registration:hover{
+    background-color: white;
+    border: none;
+    color:  #EA0032;
+  }
+
+  .display-none{
+    display: none;
+  }
+
+}
