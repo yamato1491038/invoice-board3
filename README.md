@@ -62,7 +62,12 @@ AWSを使用しデプロイ
 
 ### アプリトップ画面
 
-<img width="800" alt="ログイン画面" src="https://user-images.githubusercontent.com/67918886/98431800-f6893780-20fb-11eb-9a69-3958ec3b7fc7.png">
+![top](https://user-images.githubusercontent.com/67918886/103212835-4d1e2f80-494f-11eb-9b0a-727f2e07704c.jpg)
+
+### 業務選択画面
+
+<img width="800" alt="index" src="https://user-images.githubusercontent.com/67918886/103212928-8787cc80-494f-11eb-8210-a1a8426a01c0.png">
+
 
 ### 一覧表示とハンコ機能
 
