@@ -1,5 +1,6 @@
 class Cost < ApplicationRecord
   belongs_to :user
+  has_many :images
   validates :dating, presence: true
   validates :hno, presence: true
 
