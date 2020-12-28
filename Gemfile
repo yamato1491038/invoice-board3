@@ -70,6 +70,9 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'aws-sdk-rails', '~> 3'
 
+gem 'carrierwave'
+gem 'mini_magick'
+
 
 
 group :production do
