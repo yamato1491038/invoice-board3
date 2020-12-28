@@ -17,6 +17,7 @@
           .SigninPage__image__contents__line__right.display-none
             = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
               .SigninPage__image__contents__line__right__email
+                = render 'layouts/notifications'
                 .SigninPage__image__contents__line__right__email__text
                   = f.label :email
                 .SigninPage__image__contents__line__right__email__input
