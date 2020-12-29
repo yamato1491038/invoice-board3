@@ -70,6 +70,11 @@ AWSを使用しデプロイ
 
 <img width="800" alt="index" src="https://user-images.githubusercontent.com/67918886/103212928-8787cc80-494f-11eb-8210-a1a8426a01c0.png">
 
+### 経費登録と画像投稿の画面
+
+<img width="1304" alt="諸経費登録画面" src="https://user-images.githubusercontent.com/67918886/103294988-58985600-4a36-11eb-8120-606e35f230ba.png">
+
+
 
 ### 一覧表示とハンコ機能
 
