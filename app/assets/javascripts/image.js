@@ -3,11 +3,11 @@ $(function(){
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
     const html = `<label class="Listing__Main__ListingImage__picture__field"
-                    for="product_product_images_attributes_${num}_image">
+                    for="cost_images_attributes_${num}_image">
                     <div data-index="${num}" class="js-file_group">
                       <input class="file-field js-file" type="file"
-                      name="product[product_images_attributes][${num}][image]"
-                      id="product_product_images_attributes_${num}_image"><br>
+                      name="cost[images_attributes][${num}][image]"
+                      id="cost_images_attributes_${num}_image"><br>
                       こちらをクリックして画像アップロードしてください
                     </div>
                   </label>`;
@@ -16,11 +16,11 @@ $(function(){
   // 6個目の画像が投稿できないよう隠す
   const buildhiddenFileField = (num)=> {
     const html = `<label class="Listing__Main__ListingImage__picture__field"
-                    for="product_product_images_attributes_${num}_image">
+                    for="cost_images_attributes_${num}_image">
                     <div data-index="${num}" class="js-file_group hidden-input">
                       <input class="file-field js-file" type="file"
-                      name="product[product_images_attributes][${num}][image]"
-                      id="product_product_images_attributes_${num}_image"><br>
+                      name="cost[images_attributes][${num}][image]"
+                      id="cost_images_attributes_${num}_image"><br>
                       こちらをクリックして画像アップロードしてください
                     </div>
                   </label>`;
