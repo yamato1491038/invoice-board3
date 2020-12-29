@@ -36,28 +36,28 @@
               %td.table_style
                 = cost.content
               %td.table_style
-                %button.btn.btn-secondary{type: "button",data: {toggle: "modal", target: "#staticBackdrop#{cost.id}image"}}
-                  確認
-                .modal.fade{id: "staticBackdrop#{cost.id}image", data: {backdrop: "static", keyboard: "false"}, tabindex: "-1",aria:{labelledby: "staticBackdropLabel", hidden: "true"}}
-                  .modal-dialog
-                    .modal-content.modal-image-content
-                      .modal-header
-                        %h3.modal-title#staticBackdropLabel.modal-image-title
-                          諸経費画像
-                        %button.close{type:"button", data:{dismiss: "modal"}, aria:{label: "Close"}}
-                          %span{aria:{hidden: "true"}}
-                            &times;
-                      .modal-body
-                        .modal-previews
-                          - if cost.persisted?
+                - if cost.images.present?
+                  %button.btn.btn-secondary{type: "button",data: {toggle: "modal", target: "#staticBackdrop#{cost.id}image"}}
+                    確認
+                  .modal.fade{id: "staticBackdrop#{cost.id}image", data: {backdrop: "static", keyboard: "false"}, tabindex: "-1",aria:{labelledby: "staticBackdropLabel", hidden: "true"}}
+                    .modal-dialog
+                      .modal-content.modal-image-content
+                        .modal-header
+                          %h3.modal-title#staticBackdropLabel.modal-image-title
+                            諸経費画像
+                          %button.close{type:"button", data:{dismiss: "modal"}, aria:{label: "Close"}}
+                            %span{aria:{hidden: "true"}}
+                              &times;
+                        .modal-body
+                          .modal-previews
                             - cost.images.each_with_index do |image, i|
                               .preview
                                 .img_box{data: {index: i }}
                                   = image_tag "#{image.src.url}", data: { index: i }, class: "preview_image_modal"
-                                    
-                      .modal-footer
-                        %button.btn.btn-lg.btn-secondary.btn-default{type:'button', data:{dismiss:'modal'}}
-                          戻る
+                    
+                        .modal-footer
+                          %button.btn.btn-lg.btn-secondary.btn-default{type:'button', data:{dismiss:'modal'}}
+                            戻る
               %td.table_style
                 %button.btn.btn-danger{type: "button",data: {toggle: "modal", target: "#staticBackdrop#{cost.id}"}}
                   削除
