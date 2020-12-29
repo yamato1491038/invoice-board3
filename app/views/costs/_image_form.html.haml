@@ -4,17 +4,8 @@
   .Listing__Main__ListingImage__picture
     #image-box
       .previews
-        - if cost.persisted?
-          - cost.images.each_with_index do |image, i|
-            .preview
-              .img_box{data: {index: i }}
-                = image_tag "#{image.src.url}", data: { index: i }, class: "preview_image"
-                .js-remove
-                  削除
         = f.fields_for :images do |image|
           = image.label :src ,class: "Listing__Main__ListingImage__picture__field" do
             .js-file_group{data: {index: image.index}}
               = image.file_field :src, class: "file-field js-file"
               こちらをクリックして画像アップロードしてください
-          - if cost.persisted?
-            = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
