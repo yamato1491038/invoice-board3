@@ -1,0 +1,11 @@
+.Listing__Main__ListingImage
+  .Listing__Main__ListingImage__title
+    諸経費のレシート等画像(最大3枚まで)
+  .Listing__Main__ListingImage__picture
+    #image-box
+      .previews
+        = f.fields_for :images do |image|
+          = image.label :src ,class: "Listing__Main__ListingImage__picture__field" do
+            .js-file_group{data: {index: image.index}}
+              = image.file_field :src, class: "file-field js-file"
+              こちらをクリックして画像アップロードしてください

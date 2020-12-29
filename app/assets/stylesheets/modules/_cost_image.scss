@@ -1,0 +1,120 @@
+*{
+  box-sizing: border-box;
+}
+.Listing{
+
+  &__Main{
+
+    &__ListingImage{
+
+      &__title{
+        text-align: center;
+        font-weight: bold;
+        margin-top: 15px;
+        font-size: 20px;
+
+      }
+      &__picture{
+        width: 599px;
+
+        &__field{
+          height: 300px;
+          width: 599px;
+          cursor: pointer;
+          
+
+          .js-file_group{
+            height: 243px;
+            width: 195px;
+            margin: 3px 0 0 3px;
+            padding: 30px 5px 0 5px;
+            border: 1px solid rgb(204,204,204);
+            font-size: 15px;
+            color: lightslategrey;
+          }
+        }
+
+        #image-box{
+          background-color: rgb(245,245,245);
+          border-color: rgb(204,204,204);
+          height: 252px;
+          margin-top: 16px;
+          border: 1px dashed rgb(204,204,204);
+          overflow: hidden;
+        }
+
+        .hidden-class{
+          display: none;
+        }
+
+        .hidden-input{
+          display: none;
+        }
+      }
+    }
+
+    .file-field{
+      font-size: 10px;
+      display: none;
+    }
+  }
+}
+
+.previews {
+  display: flex;
+  height: 170px;
+
+  .preview{
+    height: 250px;
+    width: 200px;
+    background-color: white;
+    padding: 0 6px;
+    border: 0.5px solid lightgrey;
+
+
+    .img_box{
+      height: 250px;
+      
+      .preview_image{
+        width: 185px;
+        height: 200px;
+        margin-top: 10px;
+        object-fit: cover;
+      }
+      .js-remove{
+        font-size: 18px;
+        margin-top: 5px;
+        color: blue;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+  .file-field{
+    font-size: 10px;
+    display: none;
+  }
+}
+
+.modal-image-title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.modal-image-content{
+  width: 800px!important;
+}
+
+.modal-previews{
+  display: flex;
+  justify-content: center;
+
+  .preview_image_modal{
+    width: 250px;
+    height: 300px;
+    margin: 10px 5px 0 5px;
+    object-fit: cover;
+    
+  }
+}

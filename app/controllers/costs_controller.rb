@@ -2,6 +2,7 @@ class CostsController < ApplicationController
 
   def new
     @cost = Cost.new
+    @cost.images.new
   end
 
   def create
@@ -40,7 +41,7 @@ class CostsController < ApplicationController
 
   private
   def cost_params
-    params.require(:cost).permit(:dating, :hno, :parking, :fee, :content).merge(user_id: current_user.id)
+    params.require(:cost).permit(:dating, :hno, :parking, :fee, :content, images_attributes: [:src]).merge(user_id: current_user.id)
   end
 
   def search_params

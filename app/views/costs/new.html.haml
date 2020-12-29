@@ -36,6 +36,8 @@
                   = f.number_field :fee, min: 0,step:"0.1",class:""
                 %td.table_style
                   = f.text_field :content, class:""
+        .Regular__table__image
+          = render partial: "image_form", locals: { f: f, cost: @cost}
         .Regular__table__btn
           .Regular__table__btn__content
             = f.submit '諸経費登録', class: 'btn-lg btn btn-success'

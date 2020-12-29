@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_26_115135) do
+ActiveRecord::Schema.define(version: 2020_12_28_155942) do
 
   create_table "closings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "dating", null: false
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 2020_09_26_115135) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_costs_on_user_id"
+  end
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "src", null: false
+    t.bigint "cost_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cost_id"], name: "index_images_on_cost_id"
   end
 
   create_table "persuation_contracts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -115,6 +123,7 @@ ActiveRecord::Schema.define(version: 2020_09_26_115135) do
 
   add_foreign_key "closings", "users"
   add_foreign_key "costs", "users"
+  add_foreign_key "images", "costs"
   add_foreign_key "persuation_contracts", "contracts"
   add_foreign_key "persuation_contracts", "persuations"
   add_foreign_key "persuations", "users"
