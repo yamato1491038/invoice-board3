@@ -72,7 +72,7 @@ gem 'aws-sdk-rails', '~> 3'
 
 gem 'carrierwave'
 gem 'mini_magick'
-
+gem 'fog-aws'
 
 
 group :production do
