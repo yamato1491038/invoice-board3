@@ -44,7 +44,7 @@ https://www.vr-invoice.com/
 
 AWSを使用しデプロイ
 
-![個人アプリ発表 (1)](https://user-images.githubusercontent.com/67918886/103482747-ed7bc480-4e25-11eb-8c50-18f990ee79e7.jpg)
+<img width="1364" alt="インフラ" src="https://user-images.githubusercontent.com/67918886/103482799-3f244f00-4e26-11eb-862b-c8224479a029.png">
 
 
 ## 機能一覧
