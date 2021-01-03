@@ -44,7 +44,8 @@ https://www.vr-invoice.com/
 
 AWSを使用しデプロイ
 
-<img width="1351" alt="デプロイ" src="file:///Users/sakaiyamato/Downloads/%E5%80%8B%E4%BA%BA%E3%82%A2%E3%83%95%E3%82%9A%E3%83%AA%E7%99%BA%E8%A1%A8%20(1).svg">
+![個人アプリ発表 (1)](https://user-images.githubusercontent.com/67918886/103482747-ed7bc480-4e25-11eb-8c50-18f990ee79e7.jpg)
+
 
 ## 機能一覧
 ※コミュニケーターとは業務委託している現場の人の名称
