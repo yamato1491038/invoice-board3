@@ -17,10 +17,16 @@ https://www.vr-invoice.com/
 ## ログインID
 
 ### 担当者(管理側)
-ID: tantou@tantou  PAS: aaaaaaaa(a×8)
+
+ID: tantou@tantou
+
+PAS: aaaaaaaa(a×8)
 
 ### 酒井(コミュニケーター)
-ID: ID: sakai@sakai  PAS: aaaaaaaa(a×8)
+
+ID: sakai@sakai
+
+PAS: aaaaaaaa(a×8)
 
 
 ※実際に登録や削除、画像投稿、決済をしていただいて構いません。
