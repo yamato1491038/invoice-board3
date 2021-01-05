@@ -55,7 +55,7 @@ ID: ID: sakai@sakai  PAS: aaaaaaaa(a×8)
 
 AWSを使用しデプロイ
 
-![インフラ2](https://user-images.githubusercontent.com/67918886/103655718-fcd84a80-4faa-11eb-9d15-bd8a5c4f26c9.png)
+<img width="1437" alt="インフラ2" src="https://user-images.githubusercontent.com/67918886/103656388-dff04700-4fab-11eb-8456-28cd03ae581b.png">
 
 
 ## 機能一覧
