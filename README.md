@@ -15,8 +15,13 @@ https://www.vr-invoice.com/
   業務委託で現場の成果をアプリに入力すると管理者がそれをまとめて成果に対して月々の支払額を確認するもの
 
 ## ログインID
-担当者(管理側)　ID: tantou@tantou  PAS: aaaaaaaa(a×8)
-酒井（コミュニケーター）　ID: ID: sakai@sakai  PAS: aaaaaaaa(a×8)
+
+### 担当者(管理側)
+ID: tantou@tantou  PAS: aaaaaaaa(a×8)
+
+### 酒井(コミュニケーター)
+ID: ID: sakai@sakai  PAS: aaaaaaaa(a×8)
+
 
 ※実際に登録や削除、決済をしていただいて構いません。
 
